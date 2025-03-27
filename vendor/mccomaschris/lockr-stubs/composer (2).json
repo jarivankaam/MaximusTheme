@@ -1,0 +1,32 @@
+{
+  "name": "mccomaschris/lockr-stubs",
+  "version": "3.0.4",
+  "description": "Based on paulthewalton/acf-stubs. Lockr plugin function, class, and global variable declaration stubs for easier static analysis.",
+  "keywords": [
+    "wordpress",
+    "static analysis",
+    "lockr"
+  ],
+  "require-dev": {
+    "php": "^7.1",
+    "ext-gettext": "*",
+    "giacocorsiglia/stubs-generator": "^0.5.0",
+    "giacocorsiglia/wordpress-stubs": "*",
+    "wpackagist-plugin/lockr": "^3.0.4"
+  },
+  "license": "GPL-2.0+",
+  "authors": [
+    {
+      "name": "Christopher McComas",
+      "email": "mccomas.chris@gmail.com",
+      "role": "copycat"
+    }
+  ],
+  "minimum-stability": "stable",
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://wpackagist.org"
+    }
+  ]
+}

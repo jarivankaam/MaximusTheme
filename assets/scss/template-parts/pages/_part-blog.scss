@@ -1,0 +1,39 @@
+.part-blog-wrapper {
+    text-decoration:  none;
+    color: $primary-color;
+    &.first {
+        margin-bottom: 50px;
+        .image-wrapper {
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+    .image-wrapper {
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: .3s;
+        }
+    }
+
+    &:hover {
+        .image-wrapper {
+            img {
+                transform: scale(1.1);
+                transition: .3s;
+            }
+        }
+    }
+
+    .content-wrapper {
+        h3 {
+            color: $primary-color !important;
+            text-decoration: none;
+        }
+    }
+
+}

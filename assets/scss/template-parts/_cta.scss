@@ -1,0 +1,36 @@
+.section-cta {
+
+  .content {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    .background-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &__wrapper {
+      &::before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0 ;
+        left: 0;
+        background: rgba(0, 0, 0, 0.4);
+        z-index: 3;
+      }
+    }
+    &__inner__wrapper {
+      color: $white;
+      z-index: 999;
+      position: relative;
+      min-height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+  }
+}

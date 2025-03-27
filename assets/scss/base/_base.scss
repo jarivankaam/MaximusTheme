@@ -1,0 +1,39 @@
+@import './vars/vars';
+@import './grid_system/grid_system';
+
+
+
+@import './flex/flex_classes';
+@import './text/text_classes';
+@import './utilities/utilities';
+
+html {
+  font-family: sans-serif;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%
+}
+body {
+  background:  #f5f5f5 !important;
+  padding-top: 50px;
+  margin: 0;
+  max-width: 100%;
+  overflow-x: hidden;
+  font-size: 16px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+* {
+  box-sizing: border-box
+}
+p {
+  font-size: 1em;
+  display: block;
+  margin: 0;
+  line-height: 1.5
+}
+.post {
+  @media screen and (max-width: 991px) {
+    position: relative;
+  }
+}

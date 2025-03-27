@@ -1,0 +1,27 @@
+{
+  "name": "framework-boilerplate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "watch:scss": "sass --watch ./assets/scss/style.scss  ./style.css",
+    "scss": "sass ./assets/scss/style.scss  ./style.css",
+    "test": "snyk test",
+    "monitor": "snyk monitor"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jarivankaam/framework-boilerplate.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jarivankaam/framework-boilerplate/issues"
+  },
+  "homepage": "https://github.com/jarivankaam/framework-boilerplate#readme",
+  "devDependencies": {
+    "sass": "^1.57.1",
+    "snyk": "^1.1085.0"
+  }
+}

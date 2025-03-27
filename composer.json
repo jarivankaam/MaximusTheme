@@ -1,0 +1,7 @@
+{
+    "require-dev": {
+        "mccomaschris/lockr-stubs": "^3.0",
+        "paulthewalton/acf-stubs": "^5.8",
+        "php-stubs/acf-pro-stubs": "^6.2"
+    }
+}

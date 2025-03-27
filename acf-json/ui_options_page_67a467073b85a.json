@@ -1,0 +1,22 @@
+{
+    "key": "ui_options_page_67a467073b85a",
+    "title": "Website Opties",
+    "active": true,
+    "menu_order": 0,
+    "page_title": "Website Opties",
+    "menu_slug": "opties",
+    "parent_slug": "none",
+    "advanced_configuration": 1,
+    "icon_url": "dashicons-wordpress-alt",
+    "menu_title": "",
+    "position": 1,
+    "redirect": 0,
+    "description": "",
+    "update_button": "Update",
+    "updated_message": "Options Updated",
+    "capability": "edit_posts",
+    "data_storage": "options",
+    "post_id": "",
+    "autoload": 0,
+    "modified": 1738828897
+}

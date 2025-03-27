@@ -1,0 +1,62 @@
+.aside-wrapper {
+    position: relative;
+    height: 100%;
+    @media screen and (min-width: 991px) {
+        .sticky-wrapper {
+            position: sticky;
+            top: 200px;
+        }
+    }
+    .contact-detail-wrapper {
+        width: 100%;
+        border-radius: 20px;
+        padding: 50px 30px;
+        color: $white;
+        background: #242f40;
+        .maxtext {
+            color: $white;
+        }
+        h3 {
+            color: $white;
+            @media screen and (max-width: 991px) {
+                font-size: $fontSize28;
+            }
+        }
+
+        .inner-wrapper {
+            display: flex;
+            flex-direction: column;
+            padding-top: 10px;
+        }
+    }
+    .related-posts-wrapper {
+        .related-post-wrapper {
+            .image-wrapper {
+                img {
+                    transition: 0.3s;
+                }
+            }
+            &:hover {
+                .image-wrapper {
+                    img {
+                        transform: scale(1.1);
+                        transition: 0.3s;
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 991px) {
+    .aside-wrapper {
+        .contact-detail-wrapper {
+            .inner-wrapper {
+                width: 100%;
+
+                .cta {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

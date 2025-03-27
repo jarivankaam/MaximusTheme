@@ -1,0 +1,200 @@
+.site-header {
+  background: white;
+  position: fixed;
+  width: 100%;
+  z-index: 99999;
+  top: 0;
+  .header-wrapper {
+    .col-logo {
+      max-height: 150px;
+      display: flex;
+      align-items: center;
+      a {
+        height: 100%;
+        display: block;
+        padding: 10px;
+      }
+      p {
+        &.slogan {
+          font-size: 24px;
+        }
+      }
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        max-width: 150px;
+      }
+    }
+    .col-left {
+      width: 100%;
+      justify-content: space-between;
+      align-items: center;
+      ul {
+        li {
+          list-style-type: none;
+
+          a {
+            color: $primary-color;
+            text-decoration: none;
+            font-weight: normal;
+            transition: .3s;
+          }
+          &.cta-wrapper{
+            a {
+              padding: 15px 20px;
+              background: #123f62;
+              border-radius: 10px;
+              color: white;
+            }
+          }
+
+          &:hover {
+            transition: .3s;
+            a {
+              color: #36414a;
+              transition: .3s;
+            }
+            &.cta-wrapper {
+              a {
+                background: #1e476a;
+                color: white;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .menu-item-has-children {
+
+    @media screen and (max-width: 991px) {
+      .sub-menu {
+        gap: 20px;
+        margin-top: 20px;
+      }
+    }
+    @media screen and (min-width: 991px) {
+      position: relative;
+      &::after {
+        content: "\f078";
+        font-family: "Font Awesome 6 Free";
+        width: 50px;
+        height: 50px;
+        font-weight: 900;
+        color: $primary-color;
+        transition: content .3s;
+        margin: 0 0 0 2px;
+        font-size: 12px;
+      }
+      .sub-menu {
+        margin: 0;
+        position: absolute;
+        background: white;
+        width: 150px;
+        border-radius: 10px;
+        padding: 10px;
+        left: -10px;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        transition: .3s ease-in-out;
+        opacity: 0;
+        pointer-events: none;
+        z-index: -1;
+      }
+      &:hover {
+        &::after {
+          content: "\f077";
+          transition: content .3s;
+        }
+        .sub-menu {
+          opacity: 1;
+          pointer-events: initial;
+          transition: .3s ease-in-out;
+          z-index: 1;
+
+        }
+      }
+    }
+  }
+}
+
+.nav-items {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  gap: 20px;
+}
+.rmp-container {
+  max-width: unset !important;
+
+  a {
+    font-size: 21px !important;
+  }
+}
+
+
+@media screen and (max-width: 991px) {
+  .site-header {
+    .col-middle {
+      justify-content: space-between;
+      width: 100%;
+      padding: 0 10px;
+      .burger {
+        font-size: 24px;
+        z-index: 999999;
+        padding-top: 40px;
+        position: relative;
+      }
+      .col-menu {
+        position: fixed;
+        /* Instead of left: 0, we anchor it to the right */
+        right: 0;
+        height: 100vh;
+        background-color: white;
+        width: 100%;
+        display: flex;
+        align-items: baseline;
+        padding: 20px;
+        justify-content: space-between;
+        top: 100px;
+        /*
+          Move it offscreen by default,
+          then animate it in with 'transform'
+        */
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+
+        /* Optional: Keep it on top of everything */
+        z-index: 99999;
+
+        /*
+          When we add an "active" or "open" class,
+          we slide the menu into view
+        */
+        &.open {
+          transform: translateX(0);
+        }
+
+        .primary-menu {
+          ul {
+            display: flex;
+            flex-direction: column;
+            padding: 0;
+            li {
+              list-style: none;
+
+              a {
+                text-decoration: none;
+                color: $primary-color;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+}

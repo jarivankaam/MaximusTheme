@@ -1,0 +1,44 @@
+.section-blog-hero {
+    min-height: 500px;
+    .image-wrapper {
+        overflow: hidden;
+        img {
+            object-fit: cover;
+            object-position: top;
+        }
+    }
+}
+.section-blog-overview {
+    margin-top: 0;
+    .content-wrapper {
+        h1 {
+            font-size: $fontSize37;
+            position: relative;
+        }
+        iframe {
+            width: 100% !important;
+        }
+    }
+    .content-wrapper {
+        @media screen and (max-width: 991px) {
+            margin-top: 50px;
+            h1 {
+                font-size: $fontSize28;
+            }
+        }
+    }
+}
+.section-single-text {
+    .maxtext {
+        figure {
+            margin: 0;
+        }
+
+        .wp-block-video {
+            video {
+                width: 100%;
+                height: fit-content;
+            }
+        }
+    }
+}

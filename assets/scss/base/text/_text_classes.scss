@@ -1,0 +1,140 @@
+.text {
+    text-align: left;
+
+    &.center {
+        text-align: center;
+    }
+
+    &.right {
+        text-align: right;
+    }
+}
+
+.font {
+    &.Size16 {
+        font-size: 1rem;
+    }
+
+    &.Size18 {
+        font-size: 1.125rem;
+    }
+
+    &.Size20 {
+        font-size: 1.25rem;
+    }
+
+    &.Size22 {
+        font-size: 1.375rem;
+    }
+
+    &.Size24 {
+        font-size: 1.5rem;
+    }
+
+    &.Size26 {
+        font-size: 1.625rem;
+    }
+
+    &.Size28 {
+        font-size: 1.75rem;
+    }
+
+    &.Size30 {
+        font-size: 1.875rem;
+    }
+
+    &.Size32 {
+        font-size: 2rem;
+    }
+
+    &.Size34 {
+        font-size: 2.125rem;
+    }
+
+    &.Size36 {
+        font-size: 2.25rem;
+    }
+
+    &.Size38 {
+        font-size: 2.375rem;
+    }
+
+    &.Size40 {
+        font-size: 2.5rem;
+    }
+
+    &.Size42 {
+        font-size: 2.625rem;
+    }
+
+    &.Size44 {
+        font-size: 2.75rem;
+    }
+
+    &.Size46 {
+        font-size: 2.875rem;
+    }
+
+    &.Size48 {
+        font-size: 3rem;
+    }
+
+    &.Size50 {
+        font-size: 3.125rem;
+    }
+
+    &.Size52 {
+        font-size: 3.25rem;
+    }
+
+    &.Size54 {
+        font-size: 3.375rem;
+    }
+
+    &.Size56 {
+        font-size: 3.5rem;
+    }
+
+    &.Size58 {
+        font-size: 3.625rem;
+    }
+
+    &.Size60 {
+        font-size: 3.75rem;
+    }
+
+    &.Size62 {
+        font-size: 3.875rem;
+    }
+
+    &.Size64 {
+        font-size: 4rem;
+    }
+
+    &.family {
+        &.title {
+            font-family: $fontTitle;
+        }
+
+        &.body {
+            font-family: $fontBody;
+        }
+
+        &.link {
+            font-family: $fontLink;
+        }
+
+        &.special {
+            font-family: $fontSpecial;
+        }
+    }
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: $fontTitle;
+    color: $primary-color;
+    strong {
+        font-family: $fontTitle;
+        color: $primary-color;
+    }
+}
