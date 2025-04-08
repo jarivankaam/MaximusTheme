@@ -4,6 +4,7 @@ $section_id = 'section-' . $row_index;
 $section_selector = '#' . $section_id;
 
 $image = get_sub_field('image');
+$image2 = get_sub_field('image2');
 $content = get_sub_field('content');
 $buttons = get_sub_field('buttons');
 $reverse_layout = get_sub_field('layout');
@@ -13,6 +14,7 @@ if(!empty($buttons)) {
 };
 
 $use_image = get_sub_field('use_image');
+$use_image2 = get_sub_field('use_image2');
 $background = get_sub_field('background-color');
 $color = get_sub_field('color');
 
@@ -36,10 +38,15 @@ $wpforms_form = get_sub_field('wpforms_form'); // expects a form ID
             <?php
             // Output image or form in the left column (mutually exclusive)
             if($use_image && $image) : ?>
-                <div class="col-12 col-sm-12 col-md-12 col-lg-6">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-6 <?php if($use_image2) : ?> second-image-col <?php endif ?>">
                     <div class="image-wrapper">
                         <img src="<?= $image ?>" alt="image">
                     </div>
+                    <?php if($use_image2) : ?>
+                        <div class="iamge-wrapper">
+                        <img src="<?= $image2 ?>" alt="image">
+                        </div>
+                    <?php endif ?>
                 </div>
             <?php elseif($use_form && $wpforms_form) : ?>
                 <div class="col-12 col-sm-12 col-md-12 col-lg-6">
