@@ -21,7 +21,7 @@ $slogan = get_field("slogan", "options");
             <div class="container">
                 <div class="header-wrapper flex align-center justify-space-between">
                     <div class=" <?php if (wp_is_mobile()) : ?>col-middle <?php else : ?>col-left<?php endif; ?> flex align-center">
-                        <div class="main-menu col-menu flex align-items-center">
+                        <div class="main-menu col-menu flex h-100 align-items-end">
                             <?php
                                 wp_nav_menu( array(
                                 'theme_location'  => 'primary-left', // Make sure 'primary' matches the identifier used in register_nav_menus
@@ -53,7 +53,7 @@ $slogan = get_field("slogan", "options");
                                 <p class="slogan mobile-hide"><?= $slogan ?></p>
                             <?php endif ;?>
                         </div>
-                        <div class="main-menu col-menu flex align-items-center">
+                        <div class="main-menu col-menu flex h-100 align-items-end">
                             <?php
                                 wp_nav_menu( array(
                                 'theme_location'  => 'primary-right', // Make sure 'primary' matches the identifier used in register_nav_menus

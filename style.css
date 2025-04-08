@@ -4893,6 +4893,10 @@ p {
     color: #702017;
   }
 }
+.h-100 {
+  height: 100%;
+}
+
 .section-footer {
   background: #702017 !important;
   padding: 20px;
