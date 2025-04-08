@@ -38,12 +38,12 @@ $wpforms_form = get_sub_field('wpforms_form'); // expects a form ID
             <?php
             // Output image or form in the left column (mutually exclusive)
             if($use_image && $image) : ?>
-                <div class="col-12 col-sm-12 col-md-12 col-lg-6 <?php if($use_image2) : ?> second-image-col <?php endif ?>">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-6 <?php if($use_image2) : ?> second-image-col flex<?php endif ?>">
                     <div class="image-wrapper">
                         <img src="<?= $image ?>" alt="image">
                     </div>
                     <?php if($use_image2) : ?>
-                        <div class="iamge-wrapper">
+                        <div class="image-wrapper">
                         <img src="<?= $image2 ?>" alt="image">
                         </div>
                     <?php endif ?>
