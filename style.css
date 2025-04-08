@@ -1,5 +1,5 @@
 /*
-Theme Name: Jarivankaam studios
+Theme Name: SV-Maximus-Theme
 Author: Jarivankaam-studios
 Version: 1.0
 */
@@ -4322,11 +4322,11 @@ Version: 1.0
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "Montserrat", sans-serif;
-  color: #616b50;
+  color: #702017;
 }
 h1 strong, h2 strong, h3 strong, h4 strong, h5 strong, h6 strong {
   font-family: "Montserrat", sans-serif;
-  color: #616b50;
+  color: #702017;
 }
 
 .con.out.left {
@@ -4754,7 +4754,7 @@ p {
   list-style-type: none;
 }
 .site-header .header-wrapper .col-left ul li a {
-  color: #616b50;
+  color: #702017;
   text-decoration: none;
   font-weight: normal;
   transition: 0.3s;
@@ -4792,7 +4792,7 @@ p {
     width: 50px;
     height: 50px;
     font-weight: 900;
-    color: #616b50;
+    color: #702017;
     transition: content 0.3s;
     margin: 0 0 0 2px;
     font-size: 12px;
@@ -4889,11 +4889,11 @@ p {
   }
   .site-header .col-middle .col-menu .primary-menu ul li a {
     text-decoration: none;
-    color: #616b50;
+    color: #702017;
   }
 }
 .section-footer {
-  background: #616b50;
+  background: #702017 !important;
   padding: 20px;
   color: #fff;
   width: 100%;
@@ -5067,7 +5067,7 @@ p {
   margin-bottom: 100px;
 }
 .section-tiles .section-heading h2 {
-  color: #616b50;
+  color: #702017;
   font-size: 40px;
 }
 .section-tiles .tile-wrapper {
@@ -5076,7 +5076,7 @@ p {
 }
 .section-tiles .tile-wrapper .content-wrapper {
   gap: 10px;
-  color: #616b50;
+  color: #702017;
 }
 .section-tiles .tile-wrapper .content-wrapper .image-wrapper {
   max-width: 200px;
@@ -5118,7 +5118,7 @@ p {
 .section-tiles .col-12 .cta-wrapper .cta:hover {
   color: #36414a;
   transition: 0.3s;
-  background: #616b50;
+  background: #702017;
 }
 @media screen and (min-width: 991px) {
   .section-tiles .col-12:nth-child(2)::after, .section-tiles .col-12:nth-child(2)::before {
@@ -5152,7 +5152,7 @@ p {
   object-fit: contain;
 }
 .section-text .content-wrapper {
-  color: #616b50;
+  color: #702017;
   height: 100%;
   display: flex;
   align-content: center;
@@ -5389,7 +5389,7 @@ p {
   width: 50px;
   height: 50px;
   font-weight: 900;
-  color: #616b50;
+  color: #702017;
   transition: content 0.3s;
   margin: 0 0 0 5px;
   font-size: 12px;
@@ -5484,7 +5484,7 @@ p {
 
 .part-blog-wrapper {
   text-decoration: none;
-  color: #616b50;
+  color: #702017;
 }
 .part-blog-wrapper.first {
   margin-bottom: 50px;
@@ -5505,7 +5505,7 @@ p {
   transition: 0.3s;
 }
 .part-blog-wrapper .content-wrapper h3 {
-  color: #616b50 !important;
+  color: #702017 !important;
   text-decoration: none;
 }
 
