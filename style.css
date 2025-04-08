@@ -4720,7 +4720,7 @@ p {
 }
 
 .site-header {
-  background: white;
+  background: #1b2b4f;
   position: fixed;
   width: 100%;
   z-index: 99999;
@@ -4744,6 +4744,7 @@ p {
   width: 100%;
   object-fit: cover;
   max-width: 150px;
+  filter: brightness(0) invert(1);
 }
 .site-header .header-wrapper .col-left {
   width: 100%;

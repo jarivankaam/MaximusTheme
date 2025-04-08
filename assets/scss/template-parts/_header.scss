@@ -1,5 +1,5 @@
 .site-header {
-  background: white;
+  background: $primary-bg-color;
   position: fixed;
   width: 100%;
   z-index: 99999;
@@ -24,6 +24,7 @@
         width: 100%;
         object-fit: cover;
         max-width: 150px;
+        filter: brightness(0) invert(1);
       }
     }
     .col-left {
