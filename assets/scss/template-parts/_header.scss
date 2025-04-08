@@ -213,11 +213,9 @@
 }
 
 .red-bar {
-  &::before {
+  
     width: 100%;
-    padding: 20px;
+    padding: 10px;
     background-color: $primary-color;
-    position: absolute;
-    content: "";
-  }
+  
 }

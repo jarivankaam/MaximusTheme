@@ -4906,12 +4906,10 @@ p {
   align-items: flex-end;
 }
 
-.red-bar::before {
+.red-bar {
   width: 100%;
-  padding: 20px;
+  padding: 10px;
   background-color: #702017;
-  position: absolute;
-  content: "";
 }
 
 .section-footer {
