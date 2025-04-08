@@ -6,7 +6,7 @@
   top: 0;
   .header-wrapper {
     .col-logo {
-      max-height: 150px;
+      max-height: 250px;
       display: flex;
       align-items: center;
       a {
@@ -23,7 +23,7 @@
         height: 100%;
         width: 100%;
         object-fit: cover;
-        max-width: 150px;
+        max-width: 250px;
         filter: brightness(0) invert(1);
       }
     }
