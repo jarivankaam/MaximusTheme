@@ -5162,14 +5162,13 @@ p {
   margin-bottom: 100px;
 }
 .section-text .image-wrapper {
-  border-radius: 10px;
   overflow: hidden;
   max-height: 500px;
 }
 .section-text .image-wrapper img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
 }
 .section-text .content-wrapper {
   color: #702017;
