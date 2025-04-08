@@ -4755,7 +4755,7 @@ p {
   list-style-type: none;
 }
 .site-header .header-wrapper .col-left ul li a {
-  color: #702017;
+  color: white;
   text-decoration: none;
   font-weight: normal;
   transition: 0.3s;
