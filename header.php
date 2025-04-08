@@ -21,6 +21,26 @@ $slogan = get_field("slogan", "options");
             <div class="container">
                 <div class="header-wrapper flex align-center justify-space-between">
                     <div class=" <?php if (wp_is_mobile()) : ?>col-middle <?php else : ?>col-left<?php endif; ?> flex align-center">
+                        <div class="main-menu col-menu flex align-items-center">
+                            <?php
+                                wp_nav_menu( array(
+                                'theme_location'  => 'primary-left', // Make sure 'primary' matches the identifier used in register_nav_menus
+                                'container'       => 'nav',     // Wraps the menu in <nav> tags
+                                'container_class' => 'primary-menu', // Class for the container
+                                'menu_class'      => 'nav-items',     // Class for the <ul> element
+                                'fallback_cb'     => false            // Do not fall back to wp_page_menu()
+                                ) );
+                                ?>
+                                <ul class="mobile-hide">
+                                    <?php if($buttons) : ?>
+                                        <li class="cta-wrapper ">
+                                            <?php foreach($buttons as $button) : ?>
+                                                <a href="<?= $button['url']['url'] ?>"><?= $button['url']['title'] ?></a>
+                                            <?php endforeach ?>
+                                        </li>
+                                    <?php endif ?>
+                                </ul>
+                        </div>
                         <div class="col-logo">
                             <a href="<?php echo get_bloginfo('url'); ?>" rel="home">
                                 <?php if($logo) : ?>
@@ -33,11 +53,10 @@ $slogan = get_field("slogan", "options");
                                 <p class="slogan mobile-hide"><?= $slogan ?></p>
                             <?php endif ;?>
                         </div>
-
                         <div class="main-menu col-menu flex align-items-center">
                             <?php
                                 wp_nav_menu( array(
-                                'theme_location'  => 'primary', // Make sure 'primary' matches the identifier used in register_nav_menus
+                                'theme_location'  => 'primary-right', // Make sure 'primary' matches the identifier used in register_nav_menus
                                 'container'       => 'nav',     // Wraps the menu in <nav> tags
                                 'container_class' => 'primary-menu', // Class for the container
                                 'menu_class'      => 'nav-items',     // Class for the <ul> element

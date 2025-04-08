@@ -7,7 +7,8 @@ require_once('functions/get_acf_options.php');
 function register_my_menus() {
     register_nav_menus(
         array(
-            'primary' => 'Primary Menu',
+            'primary-left' => 'Primary Menu Left',
+            'primary-right' => 'Primary Menu Right',
             'footer' => 'Footer Menu'
         )
     );
