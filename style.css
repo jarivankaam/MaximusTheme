@@ -5171,12 +5171,15 @@ p {
   object-fit: cover;
 }
 .section-text .content-wrapper {
-  color: #702017;
+  color: #1b2b4f;
   height: 100%;
   display: flex;
   align-content: center;
   justify-content: center;
   flex-direction: column;
+}
+.section-text .content-wrapper p {
+  font-size: 21px;
 }
 .section-text .second-image-col {
   gap: 10px;
