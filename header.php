@@ -16,8 +16,9 @@ $slogan = get_field("slogan", "options");
 
 <body <?php body_class(); ?>>
     <?php wp_body_open(); ?>
-    <header  class="site-header ">
+    <header  class="site-header">
         <div class="relative">
+            <div class="red-bar"></div>
             <div class="container">
                 <div class="header-wrapper flex align-center justify-space-between">
                     <div class=" <?php if (wp_is_mobile()) : ?>col-middle <?php else : ?>col-left<?php endif; ?> flex align-center">
