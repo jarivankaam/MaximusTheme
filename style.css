@@ -4911,6 +4911,7 @@ p {
   padding: 20px;
   background-color: #702017;
   position: absolute;
+  content: "";
 }
 
 .section-footer {
