@@ -4,6 +4,7 @@ Author: Jarivankaam-studios
 Version: 1.0
 */
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Quattrocento:wght@400;700&display=swap");
 /* Font sizes */
 @media screen and (min-width: 992px) {
   .desktop-hide {
@@ -4308,10 +4309,10 @@ Version: 1.0
   font-size: 4rem;
 }
 .font.family.title {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Quattrocento", serif;
 }
 .font.family.body {
-  font-family: "Roboto", sans-serif;
+  font-family: "Quattrocento", serif;
 }
 .font.family.link {
   font-family: "helvetica", sans-serif;
@@ -4321,11 +4322,11 @@ Version: 1.0
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Quattrocento", serif;
   color: #702017;
 }
 h1 strong, h2 strong, h3 strong, h4 strong, h5 strong, h6 strong {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Quattrocento", serif;
   color: #702017;
 }
 
@@ -4392,7 +4393,7 @@ section {
 }
 
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: "Quattrocento", serif;
   margin: 0;
   width: 100%;
   overflow-x: hidden;
