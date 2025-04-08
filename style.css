@@ -4832,6 +4832,10 @@ p {
   width: 100%;
   gap: 20px;
 }
+.nav-items li a {
+  color: #fff;
+  font-size: 21px;
+}
 
 .rmp-container {
   max-width: unset !important;
