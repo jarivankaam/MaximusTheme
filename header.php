@@ -16,7 +16,7 @@ $slogan = get_field("slogan", "options");
 
 <body <?php body_class(); ?>>
     <?php wp_body_open(); ?>
-    <header  class="site-header <?php if(!is_front_page) : ?>red-bar <?php else : ?>front-page <?php endif; ?>">
+    <header  class="site-header ">
         <div class="relative">
             <div class="container">
                 <div class="header-wrapper flex align-center justify-space-between">
