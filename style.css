@@ -4897,6 +4897,10 @@ p {
   height: 100%;
 }
 
+.align-items-end {
+  align-items: flex-end;
+}
+
 .section-footer {
   background: #702017 !important;
   padding: 20px;
