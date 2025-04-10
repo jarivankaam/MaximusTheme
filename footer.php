@@ -28,18 +28,21 @@ $youtube = get_field('youtube', 'options');
                            <?php echo get_bloginfo('name'); ?>
                        </a>
                    </div>
-                   <?php if($street && $number && $postal && $city && $email && $phonenumber): ?>
+               
+                   <?php if($street && $number && $postal && $city && $state) : ?>
                        <div class="address">
                            <p><i class="fa-solid fa-location-dot"></i><?= $street ?> <?= $number ?></p>
                            <p><?= $postal ?> <?= $city ?>,</p>
                            <p><?= $state ?></p>
                        </div>
+                    <?php endif; ?>
+                    <?php if($email) : ?>
                        <div class="contact">
-                           <p><i class="fa-solid fa-envelope"></i><a href="mailto:<?= $email ?>"><?= $email ?></a></p>
-                           <p><i class="fa-solid fa-phone"></i><a href="tel:<?= $phonenumber ?>"><?= $phonenumber ?></a></p>
-                           <p><i class="fa-solid fa-hashtag"></i>KVK:  <?= $kvk ?></p>
+                           <?php if($email) : ?><p><i class="fa-solid fa-envelope"></i><a href="mailto:<?= $email ?>"><?= $email ?></a></p><?php endif ?>
+                           <?php if($phonenumber) : ?><p><i class="fa-solid fa-phone"></i><a href="tel:<?= $phonenumber ?>"><?= $phonenumber ?></a></p><?php endif ?>
+                           <?php if($kvk) : ?><p><i class="fa-solid fa-hashtag"></i>KVK:  <?= $kvk ?></p><?php endif ?>
                        </div>
-                    <?php endif ?>
+                       <?php endif; ?>
                 </div>
                 <div class="col-12 col-sm-12 col-md-12 col-lg-4">
                 <div class="flex flex-column align-items-center">
