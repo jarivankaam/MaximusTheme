@@ -28,7 +28,7 @@ $youtube = get_field('youtube', 'options');
                            <?php echo get_bloginfo('name'); ?>
                        </a>
                    </div>
-                   <?php if($street && $number && $postal && $city && $email && $phonenumber && $kvk): ?>
+                   <?php if($street && $number && $postal && $city && $email && $phonenumber): ?>
                        <div class="address">
                            <p><i class="fa-solid fa-location-dot"></i><?= $street ?> <?= $number ?></p>
                            <p><?= $postal ?> <?= $city ?>,</p>
