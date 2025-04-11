@@ -5208,6 +5208,12 @@ p {
   align-content: center;
   justify-content: center;
   font-size: 28px;
+  text-decoration: none;
+}
+@media screen and (max-width: 991px) {
+  .section-text .cta-wrapper a {
+    width: 100%;
+  }
 }
 
 .section-cta .content {
