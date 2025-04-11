@@ -9,9 +9,10 @@ $content = get_sub_field('content');
 $buttons = get_sub_field('buttons');
 $reverse_layout = get_sub_field('layout');
 $centered = get_sub_field('centered');
+
 if(!empty($buttons)) {
     $buttonCount = count($buttons);
-};
+}
 
 $use_image = get_sub_field('use_image');
 $use_image2 = get_sub_field('use_image2');
@@ -21,6 +22,10 @@ $color = get_sub_field('color');
 // New WPForms fields
 $use_form = get_sub_field('use_form');
 $wpforms_form = get_sub_field('wpforms_form'); // expects a form ID
+
+// New Video fields
+$use_video = get_sub_field('use_video');
+$video_url = get_sub_field('video_url');
 ?>
 <?php if($background && $color): ?>
     <style>
@@ -30,21 +35,37 @@ $wpforms_form = get_sub_field('wpforms_form'); // expects a form ID
             padding-bottom: 100px;
         }
     </style>
-<?php endif ?>
+<?php endif; ?>
 
 <section id="<?= $section_id ?>" class="section-text">
     <div class="container">
         <div class="row <?php if($reverse_layout) : ?> flex-row-reverse <?php if(wp_is_mobile()) : ?>flex-column-reverse <?php endif ?> <?php endif ?>">
+            
             <?php
-            // Output image or form in the left column (mutually exclusive)
-            if($use_image && $image) : ?>
+            // Output video, image, or form in the left column (priority: video > image > form)
+            if ($use_video && $video_url) : ?>
+                <div class="col-12 col-sm-12 col-md-12 col-lg-6">
+                    <div class="video-wrapper" style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
+                        <?php if (strpos($video_url, 'youtube.com') !== false || strpos($video_url, 'youtu.be') !== false): ?>
+                            <iframe src="<?= esc_url($video_url) ?>" frameborder="0" allowfullscreen
+                                    style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                            </iframe>
+                        <?php else: ?>
+                            <video controls style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                                <source src="<?= esc_url($video_url) ?>" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        <?php endif; ?>
+                    </div>
+                </div>
+            <?php elseif($use_image && $image) : ?>
                 <div class="col-12 col-sm-12 col-md-12 col-lg-6 <?php if($use_image2) : ?> second-image-col flex<?php endif ?>">
                     <div class="image-wrapper">
                         <img src="<?= $image ?>" alt="image">
                     </div>
                     <?php if($use_image2) : ?>
                         <div class="image-wrapper">
-                        <img src="<?= $image2 ?>" alt="image">
+                            <img src="<?= $image2 ?>" alt="image">
                         </div>
                     <?php endif ?>
                 </div>
