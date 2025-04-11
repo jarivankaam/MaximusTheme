@@ -34,7 +34,7 @@
   .cta-wrapper {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     margin-top: 10px;
     @media  screen and (max-width: 991px) {
       flex-direction: column;
