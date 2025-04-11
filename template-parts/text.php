@@ -73,6 +73,17 @@ if (!function_exists('convert_to_embed_url')) {
                             </video>
                         <?php endif; ?>
                     </div>
+                    <?php if (have_rows('buttons')) : ?>
+                        <div class="cta-wrapper video flex <?php if ($buttonCount > 1) : ?> full-width-buttons <?php endif ?>">
+                            <?php while (have_rows('buttons')) : the_row(); ?>
+                                <?php
+                                $button = get_sub_field('button');
+                                $button_type = get_sub_field('button_type');
+                                ?>
+                                <?= getButton($button, '', $button_type); ?>
+                            <?php endwhile; ?>
+                        </div>
+                    <?php endif; ?>
                 </div>
             <?php elseif ($use_image && $image) : ?>
                 <div class="col-12 col-sm-12 col-md-12 col-lg-6 <?php if ($use_image2) : ?> second-image-col flex<?php endif ?>">
@@ -98,7 +109,7 @@ if (!function_exists('convert_to_embed_url')) {
                     <div class="content-wrapper <?php if (!$centered): ?>maxtext <?php else: ?> flex flex-wrap<?php endif; ?>">
                         <?= $content ?>
                     </div>
-                    <?php if (have_rows('buttons')) : ?>
+                    <?php if (have_rows('buttons') && !$use_video) : ?>
                         <div class="cta-wrapper flex <?php if ($buttonCount > 1) : ?> full-width-buttons <?php endif ?>">
                             <?php while (have_rows('buttons')) : the_row(); ?>
                                 <?php
