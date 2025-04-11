@@ -28,15 +28,18 @@ $use_video = get_sub_field('use_video');
 $video_url = get_sub_field('video_url');
 
 // Function to convert YouTube watch URLs to embed URLs
-function convert_to_embed_url($url) {
-    if (strpos($url, 'youtube.com/watch') !== false || strpos($url, 'youtu.be/') !== false) {
-        preg_match('/(youtu\.be\/|v=)([^&]+)/', $url, $matches);
-        if (isset($matches[2])) {
-            return 'https://www.youtube.com/embed/' . $matches[2];
+if (!function_exists('convert_to_embed_url')) {
+    function convert_to_embed_url($url) {
+        if (strpos($url, 'youtube.com/watch') !== false || strpos($url, 'youtu.be/') !== false) {
+            preg_match('/(youtu\.be\/|v=)([^&]+)/', $url, $matches);
+            if (isset($matches[2])) {
+                return 'https://www.youtube.com/embed/' . $matches[2];
+            }
         }
+        return $url;
     }
-    return $url; // Return original if not a known pattern
 }
+
 ?>
 <?php if ($background && $color): ?>
     <style>
