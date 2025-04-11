@@ -5188,11 +5188,22 @@ p {
 .section-text .second-image-col {
   gap: 5px;
 }
+.section-text .cta-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+@media screen and (max-width: 991px) {
+  .section-text .cta-wrapper {
+    flex-direction: column;
+  }
+}
 .section-text .cta-wrapper a {
   width: 40%;
   padding: 15px;
   background: #1b2b4f !important;
-  color: wheat;
+  color: white;
   display: flex;
   align-content: center;
   justify-content: center;
