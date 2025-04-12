@@ -4720,6 +4720,10 @@ p {
   }
 }
 
+.page {
+  margin-top: 100px;
+}
+
 .site-header {
   background: #1b2b4f;
   position: fixed;
