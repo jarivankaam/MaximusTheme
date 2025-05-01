@@ -33,6 +33,17 @@ $slogan = get_field("slogan", "options");
                                 'fallback_cb'     => false            // Do not fall back to wp_page_menu()
                                 ) );
                                 ?>
+                                <span class="desktop-hide">
+                                <?php
+                                wp_nav_menu( array(
+                                'theme_location'  => 'primary-right', // Make sure 'primary' matches the identifier used in register_nav_menus
+                                'container'       => 'nav',     // Wraps the menu in <nav> tags
+                                'container_class' => 'primary-menu', // Class for the container
+                                'menu_class'      => 'nav-items',     // Class for the <ul> element
+                                'fallback_cb'     => false            // Do not fall back to wp_page_menu()
+                                ) );
+                                ?>
+                                </span>
                                 <ul class="mobile-hide">
                                     <?php if($buttons) : ?>
                                         <li class="cta-wrapper ">
