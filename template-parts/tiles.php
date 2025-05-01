@@ -22,7 +22,7 @@ $col_count = 12 / $tileCount;
         <?php endif ?>
         <div class="row">
             <?php foreach($tiles as $tile): ?>
-                <div class="col-12 col-sm-12 col-md-12 col-lg-3 ">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-<?= $col_count + 1 ?> ">
                     <?php if($tile['icon']) : ?>
                         <div class="tile-wrapper flex justify-content-center">
                             <div class="content-wrapper border-radius-10 flex flex-column align-items-center justify-content-center">
