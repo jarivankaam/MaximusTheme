@@ -28,6 +28,8 @@
           width: 200px;
           object-fit: contain;
           padding: 20px;
+          scale: 1;
+          transition: .3s;
         }
       }
       color: $primary_color;
@@ -35,7 +37,16 @@
         text-align: center;
       }
     }
-
+    	&::hover,&::active {
+        .content-wrapper {
+          .image-wrapper {
+            img {
+              scale: 1.1;
+              transition: .3s;
+            }
+          }
+        }
+      }
   }
   .row {
     gap: 25px;

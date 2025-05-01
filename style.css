@@ -5118,9 +5118,15 @@ p {
   width: 200px;
   object-fit: contain;
   padding: 20px;
+  scale: 1;
+  transition: 0.3s;
 }
 .section-tiles .tile-wrapper .content-wrapper p {
   text-align: center;
+}
+.section-tiles .tile-wrapper::hover .content-wrapper .image-wrapper img, .section-tiles .tile-wrapper::active .content-wrapper .image-wrapper img {
+  scale: 1.1;
+  transition: 0.3s;
 }
 .section-tiles .row {
   gap: 25px;
