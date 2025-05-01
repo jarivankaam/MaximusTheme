@@ -5098,6 +5098,10 @@ p {
   padding: 0 50px;
   margin-bottom: 20px;
 }
+.section-tiles .tile-wrapper::hover .content-wrapper .image-wrapper img {
+  scale: 1.1;
+  transition: 0.3s;
+}
 .section-tiles .tile-wrapper .content-wrapper {
   gap: 10px;
   color: #702017;
@@ -5123,10 +5127,6 @@ p {
 }
 .section-tiles .tile-wrapper .content-wrapper p {
   text-align: center;
-}
-.section-tiles .tile-wrapper::hover .content-wrapper .image-wrapper img {
-  scale: 1.1;
-  transition: 0.3s;
 }
 .section-tiles .row {
   gap: 25px;

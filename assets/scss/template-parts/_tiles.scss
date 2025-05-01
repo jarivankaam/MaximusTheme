@@ -9,6 +9,16 @@
   }
 
   .tile-wrapper {
+    &::hover {
+      .content-wrapper {
+        .image-wrapper {
+          img {
+            scale: 1.1;
+            transition: .3s;
+          }
+        }
+      }
+    }
     padding: 0 50px;
     margin-bottom: 20px;
     .content-wrapper {
@@ -37,16 +47,6 @@
         text-align: center;
       }
     }
-    	&::hover {
-        .content-wrapper {
-          .image-wrapper {
-            img {
-              scale: 1.1;
-              transition: .3s;
-            }
-          }
-        }
-      }
   }
   .row {
     gap: 25px;
