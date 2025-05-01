@@ -5109,11 +5109,14 @@ p {
   border-radius: 10px;
   background-color: white;
   padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .section-tiles .tile-wrapper .content-wrapper .image-wrapper img {
   height: 200px;
   width: 200px;
-  object-fit: cover;
+  object-fit: contain;
 }
 .section-tiles .tile-wrapper .content-wrapper p {
   text-align: center;
