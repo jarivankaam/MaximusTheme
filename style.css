@@ -5108,9 +5108,10 @@ p {
   overflow: hidden;
   border-radius: 10px;
   background-color: white;
+  padding: 20px;
 }
 .section-tiles .tile-wrapper .content-wrapper .image-wrapper img {
-  height: 100%;
+  height: 200px;
   width: 200px;
   object-fit: cover;
 }
