@@ -5123,7 +5123,7 @@ p {
   text-align: center;
 }
 .section-tiles .row {
-  gap: 10px;
+  gap: 25px;
 }
 .section-tiles .col-12 {
   position: relative;
