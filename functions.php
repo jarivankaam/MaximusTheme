@@ -7,8 +7,7 @@ require_once('functions/get_acf_options.php');
 function register_my_menus() {
     register_nav_menus(
         array(
-            'primary-left' => 'Primary Menu Left',
-            'primary-right' => 'Primary Menu Right',
+            'primary' => 'Primary Menu',
             'footer' => 'Footer Menu'
         )
     );
@@ -30,10 +29,13 @@ function enqueue_custom_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'enqueue_custom_scripts' );
 
+wp_enqueue_style('livenow-style', get_stylesheet_uri(), array(), filemtime(get_stylesheet_directory() . '/style.css'));
+
 // Add viewport meta tag and Font Awesome kit in the header.
 function mytheme_add_viewport_meta_tag() {
     echo '<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0">';
     echo '<script src="https://kit.fontawesome.com/79f79ff0fc.js" crossorigin="anonymous"></script>';
+    echo '<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>';
 }
 add_action( 'wp_head', 'mytheme_add_viewport_meta_tag' );
 ?>
