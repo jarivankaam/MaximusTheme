@@ -5117,9 +5117,13 @@ p {
   height: 200px;
   width: 200px;
   object-fit: contain;
+  padding: 20px;
 }
 .section-tiles .tile-wrapper .content-wrapper p {
   text-align: center;
+}
+.section-tiles .row {
+  gap: 10px;
 }
 .section-tiles .col-12 {
   position: relative;
