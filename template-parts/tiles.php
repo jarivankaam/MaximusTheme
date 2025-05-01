@@ -24,7 +24,7 @@ $col_count = 12 / $tileCount;
             <?php foreach($tiles as $tile): ?>
                 <div class="col-12 col-sm-12 col-md-12 col-lg-<?= round($col_count + 1) ?> ">
                     <?php if($tile['icon']) : ?>
-                        <div class="tile-wrapper flex justify-content-center">
+                        <a href="<?= $tile['button'] ? $tile['button'] : '#' ?> " class="tile-wrapper flex justify-content-center">
                             <div class="content-wrapper border-radius-10 flex flex-column align-items-center justify-content-center">
                                 <?php if ($tile['icon']) : ?>
                                     <div class="image-wrapper">
@@ -40,12 +40,7 @@ $col_count = 12 / $tileCount;
                                 </div>
 
                             </div>
-                        </div>
-                        <?php if($tile['button']) : ?>
-                            <div class="cta-wrapper">
-                                <a href="<?= $tile['button']['url'] ?>" class="cta"><?= $tile['button']['title'] ?></a>
-                            </div>
-                        <?php endif ?>
+                        </a>
                     <?php endif ?>
                 </div>
             <?php endforeach; ?>
