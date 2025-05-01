@@ -9,7 +9,7 @@
   }
 
   .tile-wrapper {
-    &::hover {
+    &:hover, &:active {
       .content-wrapper {
         .image-wrapper {
           img {
