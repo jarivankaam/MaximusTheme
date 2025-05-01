@@ -25,6 +25,9 @@
         object-fit: cover;
         max-width: 250px;
         filter: brightness(0) invert(1);
+        @media screen and (max-width: 991px) {
+          object-fit: contain;
+        }
       }
     }
     .col-left {

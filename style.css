@@ -4747,6 +4747,11 @@ p {
   max-width: 250px;
   filter: brightness(0) invert(1);
 }
+@media screen and (max-width: 991px) {
+  .site-header .header-wrapper .col-logo img {
+    object-fit: contain;
+  }
+}
 .site-header .header-wrapper .col-left {
   width: 100%;
   justify-content: space-between;
