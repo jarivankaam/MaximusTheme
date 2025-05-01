@@ -5099,7 +5099,7 @@ p {
   margin-bottom: 20px;
 }
 .section-tiles .tile-wrapper::hover .content-wrapper .image-wrapper img {
-  scale: 1.1;
+  transform: scale(1.1);
   transition: 0.3s;
 }
 .section-tiles .tile-wrapper .content-wrapper {
@@ -5122,7 +5122,7 @@ p {
   width: 200px;
   object-fit: contain;
   padding: 20px;
-  scale: 1;
+  transform: scale(1);
   transition: 0.3s;
 }
 .section-tiles .tile-wrapper .content-wrapper p {
