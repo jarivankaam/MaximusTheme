@@ -4867,7 +4867,7 @@ p {
     display: flex;
     align-items: baseline;
     padding: 20px;
-    top: 100px;
+    top: 110px;
     flex-direction: column;
     /*
       Move it offscreen by default,
