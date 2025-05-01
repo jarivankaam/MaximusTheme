@@ -4847,7 +4847,6 @@ p {
 
 @media screen and (max-width: 991px) {
   .site-header .col-middle {
-    justify-content: space-between;
     width: 100%;
     padding: 0 10px;
   }
@@ -4867,7 +4866,6 @@ p {
     display: flex;
     align-items: baseline;
     padding: 20px;
-    justify-content: space-between;
     top: 100px;
     /*
       Move it offscreen by default,
