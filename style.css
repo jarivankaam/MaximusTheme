@@ -4894,6 +4894,7 @@ p {
     display: flex;
     flex-direction: column;
     padding: 0;
+    margin: 10px 0;
   }
   .site-header .col-middle .col-menu .primary-menu ul li {
     list-style: none;
