@@ -55,7 +55,7 @@ $slogan = get_field("slogan", "options");
                                 <p class="slogan mobile-hide"><?= $slogan ?></p>
                             <?php endif ;?>
                         </div>
-                        <div class="main-menu col-menu flex h-100 align-items-end">
+                        <div class="main-menu col-menu flex h-100 align-items-end mobile-hide">
                             <?php
                                 wp_nav_menu( array(
                                 'theme_location'  => 'primary-right', // Make sure 'primary' matches the identifier used in register_nav_menus
