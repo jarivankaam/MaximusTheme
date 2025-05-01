@@ -18,6 +18,7 @@
         max-height: 200px;
         overflow: hidden;
         border-radius: 10px;
+        background-color: white;
         img {
           height: 100%;
           width: 200px;
@@ -55,28 +56,6 @@
           color: #36414a;
           transition: .3s;
           background: $primary_color;
-        }
-      }
-    }
-
-    @media screen and (min-width: 991px) {
-      &:nth-child(2) {
-        &::after,
-        &::before {
-          height: 100%;
-          width: 2px;
-          background: gray;
-          content: "";
-          position: absolute;
-          top: 0;
-        }
-
-        &::after {
-          right: 0;
-        }
-
-        &::before {
-          left: 0;
         }
       }
     }
