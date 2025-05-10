@@ -5005,6 +5005,9 @@ header .container {
   overflow: hidden;
 }
 
+.section-gallery .image-wrapper {
+  max-height: 400px;
+}
 .section-gallery .image-wrapper img {
   width: 100%;
   height: 100%;
