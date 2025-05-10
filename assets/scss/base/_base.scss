@@ -41,3 +41,38 @@ p {
 // .page {
 //   margin-top: 100px;
 // }
+
+// Directions
+$directions: (
+  "top": "top",
+  "bottom": "bottom",
+  "left": "left",
+  "right": "right"
+);
+
+// Margin classes
+@each $key, $dir in $directions {
+  .m-#{$key} {
+    @for $i from 10 through 100 {
+      @if $i % 10 == 0 {
+        &-#{$i} {
+          margin-#{$dir}: #{$i}px;
+        }
+      }
+    }
+  }
+}
+
+// Padding classes
+@each $key, $dir in $directions {
+  .p-#{$key} {
+    @for $i from 10 through 100 {
+      @if $i % 10 == 0 {
+        &-#{$i} {
+          padding-#{$dir}: #{$i}px;
+        }
+      }
+    }
+  }
+}
+
