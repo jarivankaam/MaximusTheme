@@ -7,6 +7,7 @@ $section_selector = '#' . $section_id;
 $tiles = get_sub_field('tiles');
 $section_title = get_sub_field('section_title');
 $partners = get_sub_field('partners');
+$head_sponsor = get_sub_field("head");
 
 $tileCount = count($tiles);
 $col_count = 12 / $tileCount;
@@ -32,7 +33,7 @@ if($partners) {
             <?php foreach($tiles as $tile): ?>
                 <div class="col-12 col-sm-12 col-md-12 col-lg-<?= round($col_count + $extra_col) ?> ">
                     <?php if($tile['title'] || $tile['icon']) : ?>
-                        <<?= $partners ? 'a href="' . (!empty($tile['button']) ? $tile['button'] : '#') . '"' : 'div' ?> class="tile-wrapper flex justify-content-center">
+                        <<?= $partners ? 'a href="' . (!empty($tile['button']) ? $tile['button'] : '#') . '"' : 'div' ?> class="tile-wrapper <?php if($head_sponsor) : ?>head-sponsor<?php endif ?>flex justify-content-center">
                             <div class="content-wrapper border-radius-10 flex flex-column align-items-center justify-content-center">
                                 <?php if ($tile['icon']) : ?>
                                     <div class="image-wrapper">
