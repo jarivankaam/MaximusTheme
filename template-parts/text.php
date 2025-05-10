@@ -9,6 +9,7 @@ $content = get_sub_field('content');
 $buttons = get_sub_field('buttons');
 $reverse_layout = get_sub_field('layout');
 $centered = get_sub_field('centered');
+$partners = get_sub_field('partners');
 
 if (!empty($buttons)) {
     $buttonCount = count($buttons);
@@ -51,9 +52,9 @@ if (!function_exists('convert_to_embed_url')) {
     </style>
 <?php endif; ?>
 
-<section id="<?= $section_id ?>" class="section-text">
+<section id="<?= $section_id ?>" class="section-text <?php if($partners) : ?>partners <?php endif ?>">
     <div class="container">
-        <div class="row <?php if ($reverse_layout) : ?> flex-row-reverse <?php if (wp_is_mobile()) : ?>flex-column-reverse <?php endif ?> <?php endif ?>">
+        <div class="row <?php if ($reverse_layout) : ?> flex-row-reverse <?php if (wp_is_mobile()) : ?>flex-column-reverse <?php endif ?> <?php endif ?> ">
             
             <?php
             // Output video, image, or form in the left column (priority: video > image > form)

@@ -1,6 +1,17 @@
 .section-text {
   margin-top: 50px;
   margin-bottom: 50px;
+
+  &.partners {
+    .image-wrapper {
+      height: 100%;
+        max-height: 100%;
+        overflow: hidden;
+        width: 100%;
+        border-radius: 10px;
+        
+    }
+  }
   .image-wrapper {
     overflow: hidden;
     max-height: 500px;

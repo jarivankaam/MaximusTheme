@@ -5130,13 +5130,6 @@ p {
 .section-tiles .tile-wrapper .content-wrapper p {
   text-align: center;
 }
-.section-tiles .tile-wrapper.head-sponsor .image-wrapper {
-  height: 100%;
-  max-height: 100%;
-  overflow: hidden;
-  width: 100%;
-  border-radius: 10px;
-}
 .section-tiles .col-12 {
   position: relative;
   display: flex;
@@ -5172,6 +5165,13 @@ p {
 .section-text {
   margin-top: 50px;
   margin-bottom: 50px;
+}
+.section-text.partners .image-wrapper {
+  height: 100%;
+  max-height: 100%;
+  overflow: hidden;
+  width: 100%;
+  border-radius: 10px;
 }
 .section-text .image-wrapper {
   overflow: hidden;
