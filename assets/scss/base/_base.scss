@@ -87,7 +87,9 @@ section {
 h2 {
   font-size: 40px;
 }
-
+.red-bar {
+  transition: .3s;
+}
 body.scrolled {
   .red-bar {
     margin-bottom: -35px;
