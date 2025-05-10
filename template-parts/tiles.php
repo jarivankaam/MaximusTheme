@@ -7,6 +7,7 @@ $tiles = get_sub_field('tiles');
 $section_title = get_sub_field('section_title');
 $section_sub_content = get_sub_field('section_sub_content');
 $partners = get_sub_field('partners');
+$current = get_sub_field("current");
 
 $tileCount = count($tiles);
 $col_count = $tileCount > 0 ? 12 / $tileCount : 12; // Prevent division by zero
@@ -32,6 +33,12 @@ $extra_col = $partners ? 1 : 0;
                         $use_link = $partners || !empty($tile['button']);
                         $tile_url = !empty($tile['button']) ? $tile['button'] : '#';
                         $wrapper_tag = $use_link ? 'a' : 'div';
+
+                            if($current) {
+                                $name = $tile['name'];
+                                $email = $tile['email'];
+                                $school = $tile['school'];
+                            }
                         ?>
 
                         <<?= $wrapper_tag ?> <?= $use_link ? 'href="' . esc_url($tile_url) . '"' : '' ?> class="tile-wrapper flex justify-content-center">
@@ -44,9 +51,15 @@ $extra_col = $partners ? 1 : 0;
 
                                 <div class="maxtext flex flex-column align-items-center justify-content-center">
                                     <p class="bold"><?= esc_html($tile['title']) ?></p>
-                                    <?php if (!empty($tile['content'])): ?>
-                                        <p><?= esc_html($tile['content']) ?></p>
-                                    <?php endif; ?>
+                                    <?php if($current) : ?>
+                                        <p><?= $name ?></p>
+                                        <p><?= $email ?></p>
+                                        <p><?= $school ?></p>
+                                    <?php else :?>
+                                        <?php if (!empty($tile['content'])): ?>
+                                            <p><?= esc_html($tile['content']) ?></p>
+                                        <?php endif; ?>
+                                    <?php endif ?>
                                 </div>
                             </div>
                         </<?= $wrapper_tag ?>>
