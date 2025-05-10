@@ -5019,6 +5019,14 @@ header .container {
   object-fit: cover;
 }
 
+.wpforms-submit {
+  padding: 15px;
+  background: #1b2b4f !important;
+  color: white;
+  font-size: 28px;
+  text-decoration: none;
+}
+
 .site-header {
   position: fixed;
   width: 100%;
