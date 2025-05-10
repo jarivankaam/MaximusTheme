@@ -4976,6 +4976,10 @@ section {
   margin-top: 0;
 }
 
+h2 {
+  font-size: 40px;
+}
+
 .site-header {
   background: #1b2b4f;
   position: fixed;
