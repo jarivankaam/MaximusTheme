@@ -5005,9 +5005,10 @@ header .container {
   overflow: hidden;
 }
 
-.section-gallery .image-wrapper {
-  max-width: 100px;
-  max-height: 100px;
+.section-gallery .image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .site-header {

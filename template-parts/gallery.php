@@ -14,7 +14,7 @@ $offset = ($paged - 1) * $images_per_page;
 $current_images = array_slice($images, $offset, $images_per_page);
 
 // Calculate column width
-$col_count = $images_per_page > 0 ? floor(12 / min(count($current_images), 4)) : 12; // max 4 per row
+$col_count = $images_per_page > 0 ? floor(12 / min(count($current_images), 3)) : 12; // max 4 per row
 ?>
 
 <section id="<?= esc_attr($section_id) ?>" class="section-gallery">
