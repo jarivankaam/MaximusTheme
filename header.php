@@ -95,11 +95,4 @@ $slogan = get_field("slogan", "options");
         </div>
     </header>
     <div id="post-<?php the_ID(); ?>" <?php post_class('wrapper'); ?>>
-        <?php if (!is_front_page()) : ?>
-            <section id="breadcrumbs"
-                     class="section-breadcrumbs p-top-30 m-bot-30 pb-0 header-crumbs <?php if (is_single()) : ?>absolute top<?php endif; ?>">
-                <div class="container">
-                    <?php yoast_breadcrumb('<div class="breadcrumbs">', '</div>'); ?>
-                </div>
-            </section>
-        <?php endif; ?>
+
