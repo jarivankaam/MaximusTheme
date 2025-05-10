@@ -4993,6 +4993,10 @@ body.scrolled .red-bar {
   transition: 0.3s;
 }
 
+header .container {
+  padding: 0 !important;
+}
+
 .site-header {
   position: fixed;
   width: 100%;
