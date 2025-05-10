@@ -97,3 +97,9 @@ body.scrolled {
     transition: .3s;
   }
 }
+
+header {
+  .container {
+    padding: 0 !important;
+  }
+}
