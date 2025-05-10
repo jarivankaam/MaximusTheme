@@ -3,67 +3,77 @@
   width: 100%;
   z-index: 99999;
   top: 0;
-  .header-wrapper {
+  .middle-bar {
     background: $primary-bg-color;
     height: 71px;
-    .col-logo {
-      max-height: 250px;
-      display: flex;
-      align-items: center;
-      a {
-        height: 100%;
-        display: block;
-        padding: 10px;
-      }
-      p {
-        &.slogan {
-          font-size: 24px;
+    .header-wrapper {
+      .col-logo {
+        max-height: 250px;
+        display: flex;
+        align-items: center;
+
+        a {
+          height: 100%;
+          display: block;
+          padding: 10px;
+        }
+
+        p {
+          &.slogan {
+            font-size: 24px;
+          }
+        }
+
+        img {
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+          max-width: 250px;
+          filter: brightness(0) invert(1);
+          @media screen and (max-width: 991px) {
+            object-fit: contain;
+          }
         }
       }
-      img {
-        height: 100%;
+
+      .col-left {
         width: 100%;
-        object-fit: cover;
-        max-width: 250px;
-        filter: brightness(0) invert(1);
-        @media screen and (max-width: 991px) {
-          object-fit: contain;
-        }
-      }
-    }
-    .col-left {
-      width: 100%;
-      justify-content: space-between;
-      align-items: center;
-      ul {
-        li {
-          list-style-type: none;
+        justify-content: space-between;
+        align-items: center;
 
-          a {
-            color: white;
-            text-decoration: none;
-            font-weight: normal;
-            transition: .3s;
-          }
-          &.cta-wrapper{
+        ul {
+          li {
+            list-style-type: none;
+
             a {
-              padding: 15px 20px;
-              background: #123f62;
-              border-radius: 10px;
               color: white;
-            }
-          }
-
-          &:hover {
-            transition: .3s;
-            a {
-              color: #36414a;
+              text-decoration: none;
+              font-weight: normal;
               transition: .3s;
             }
+
             &.cta-wrapper {
               a {
-                background: #1e476a;
+                padding: 15px 20px;
+                background: #123f62;
+                border-radius: 10px;
                 color: white;
+              }
+            }
+
+            &:hover {
+              transition: .3s;
+
+              a {
+                color: #36414a;
+                transition: .3s;
+              }
+
+              &.cta-wrapper {
+                a {
+                  background: #1e476a;
+                  color: white;
+                }
               }
             }
           }

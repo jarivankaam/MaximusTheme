@@ -18,7 +18,7 @@ $slogan = get_field("slogan", "options");
     <?php wp_body_open(); ?>
     <header  class="site-header">
         <div class="red-bar"></div>
-        <div class="relative">
+        <div class=" middle-bar relative">
         
             <div class="container">
                 <div class="header-wrapper flex align-center justify-space-between">
