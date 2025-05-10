@@ -5096,7 +5096,14 @@ body.scrolled .red-bar {
     z-index: -1;
     top: 30px;
   }
-  .site-header .menu-item-has-children .sub-menu > a {
+}
+@media screen and (min-width: 991px) and (max-width: 991px) {
+  .site-header .menu-item-has-children .sub-menu {
+    margin-top: 15px;
+  }
+}
+@media screen and (min-width: 991px) {
+  .site-header .menu-item-has-children .sub-menu a {
     color: #fff !important;
   }
   .site-header .menu-item-has-children:hover::after {
