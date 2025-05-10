@@ -6,6 +6,7 @@ $section_selector = '#' . $section_id;
 
 $tiles = get_sub_field('tiles');
 $section_title = get_sub_field('section_title');
+$section_sub_content = get_sub_field('section_sub_content');
 $partners = get_sub_field('partners');
 
 $tileCount = count($tiles);
@@ -26,6 +27,9 @@ if($partners) {
                 <h2>
                     <?= $section_title ?>
                 </h2>
+                <?php if($section_sub_content) :  ?>
+                    <p><?= $section_sub_content ?></p>
+                <?php endif ?>
             </div>
         <?php endif ?>
         <div class="row">
