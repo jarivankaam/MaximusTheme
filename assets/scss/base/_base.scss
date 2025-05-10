@@ -89,6 +89,8 @@ h2 {
 }
 .red-bar {
   transition: .3s;
+  margin-bottom: inherit;
+  z-index: 1;
 }
 body.scrolled {
   .red-bar {
