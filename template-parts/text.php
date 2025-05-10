@@ -28,6 +28,8 @@ $wpforms_form = get_sub_field('wpforms_form'); // expects a form ID
 $use_video = get_sub_field('use_video');
 $video_url = get_sub_field('video_url');
 
+$spotify = get_sub_field ('spotify');
+
 // Function to convert YouTube watch URLs to embed URLs
 if (!function_exists('convert_to_embed_url')) {
     function convert_to_embed_url($url) {
@@ -103,8 +105,11 @@ if (!function_exists('convert_to_embed_url')) {
                         <?php echo do_shortcode('[wpforms id="' . $wpforms_form . '" title="false"]'); ?>
                     </div>
                 </div>
+            <?php elseif ($spotify) : ?>
+                <div class="col-12 col-sm-12 col-md-12 col-lg-6">
+                    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/artist/7JJo7YCpCBXFAvwGVIpiiN?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                </div>
             <?php endif; ?>
-
             <?php if ($content): ?>
                 <div class="col-12 <?php if (!$centered) : ?>col-sm-12 col-md-12 col-lg-6<?php endif ?>">
                     <div class="content-wrapper <?php if (!$centered): ?>maxtext <?php else: ?> flex flex-wrap<?php endif; ?>">

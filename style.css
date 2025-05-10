@@ -5094,7 +5094,7 @@ body.scrolled .red-bar {
     opacity: 0;
     pointer-events: none;
     z-index: -1;
-    top: 30px;
+    padding-top: 20px;
   }
 }
 @media screen and (min-width: 991px) and (max-width: 991px) {
