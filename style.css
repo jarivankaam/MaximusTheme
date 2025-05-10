@@ -4980,10 +4980,15 @@ h2 {
   font-size: 40px;
 }
 
+.red-bar {
+  transition: 0.3s;
+}
+
 body.scrolled .red-bar {
-  margin-bottom: -35px;
+  margin-bottom: -20px;
   z-index: -5;
   position: relative;
+  transition: 0.3s;
 }
 
 .site-header {

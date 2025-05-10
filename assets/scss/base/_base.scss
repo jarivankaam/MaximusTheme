@@ -92,8 +92,9 @@ h2 {
 }
 body.scrolled {
   .red-bar {
-    margin-bottom: -35px;
+    margin-bottom: -20px;
     z-index: -5;
     position: relative;
+    transition: .3s;
   }
 }
