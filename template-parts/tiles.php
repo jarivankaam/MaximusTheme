@@ -8,6 +8,7 @@ $section_title = get_sub_field('section_title');
 $section_sub_content = get_sub_field('section_sub_content');
 $partners = get_sub_field('partners');
 $current = get_sub_field("current");
+$db = get_field("current_db", "options");
 
 $tileCount = count($tiles);
 $col_count = $tileCount > 0 ? 12 / $tileCount : 12; // Prevent division by zero
@@ -20,7 +21,7 @@ $extra_col = $partners ? 1 : 0;
             <div class="section-heading">
                 <h2><?= esc_html($section_title) ?></h2>
                 <?php if ($section_sub_content): ?>
-                    <p class="m-bot-20"><?= esc_html($section_sub_content) ?></p>
+                    <p class="m-bot-20"><?= esc_html($section_sub_content) ?> Momenteel leidt Dagelijks Bestuur <?= $db ?> onze studentenvereniging.</p>
                 <?php endif; ?>
             </div>
         <?php endif; ?>
