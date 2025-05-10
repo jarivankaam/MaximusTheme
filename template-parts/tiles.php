@@ -6,7 +6,7 @@ $section_selector = '#' . $section_id;
 
 $tiles = get_sub_field('tiles');
 $section_title = get_sub_field('section_title');
-$parters = get_sub_field('partners');
+$partners = get_sub_field('partners');
 
 $tileCount = count($tiles);
 $col_count = 12 / $tileCount;
