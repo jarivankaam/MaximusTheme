@@ -107,7 +107,7 @@
         margin: 0;
         position: absolute;
         background: $primary-bg-color;
-        width: 150px;
+        width: fit-content;
         border-radius: 10px;
         padding: 10px 20px;
         left: -10px;
@@ -119,6 +119,9 @@
         pointer-events: none;
         z-index: -1;
         top: 30px;
+         > a {
+           color: $white !important;
+         }
       }
       &:hover {
         &::after {
