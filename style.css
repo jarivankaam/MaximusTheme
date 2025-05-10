@@ -4987,11 +4987,14 @@ body.scrolled .red-bar {
 }
 
 .site-header {
-  background: #1b2b4f;
   position: fixed;
   width: 100%;
   z-index: 99999;
   top: 0;
+}
+.site-header .header-wrapper {
+  background: #1b2b4f;
+  height: 71px;
 }
 .site-header .header-wrapper .col-logo {
   max-height: 250px;

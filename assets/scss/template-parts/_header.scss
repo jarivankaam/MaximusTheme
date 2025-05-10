@@ -1,10 +1,11 @@
 .site-header {
-  background: $primary-bg-color;
   position: fixed;
   width: 100%;
   z-index: 99999;
   top: 0;
   .header-wrapper {
+    background: $primary-bg-color;
+    height: 71px;
     .col-logo {
       max-height: 250px;
       display: flex;
