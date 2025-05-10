@@ -4996,20 +4996,20 @@ body.scrolled .red-bar {
   background: #1b2b4f;
   height: 71px;
 }
-.site-header .middle-bar .header-wrapper .col-logo {
+.site-header .header-wrapper .col-logo {
   max-height: 250px;
   display: flex;
   align-items: center;
 }
-.site-header .middle-bar .header-wrapper .col-logo a {
+.site-header .header-wrapper .col-logo a {
   height: 100%;
   display: block;
   padding: 10px;
 }
-.site-header .middle-bar .header-wrapper .col-logo p.slogan {
+.site-header .header-wrapper .col-logo p.slogan {
   font-size: 24px;
 }
-.site-header .middle-bar .header-wrapper .col-logo img {
+.site-header .header-wrapper .col-logo img {
   height: 100%;
   width: 100%;
   object-fit: cover;
@@ -5017,38 +5017,38 @@ body.scrolled .red-bar {
   filter: brightness(0) invert(1);
 }
 @media screen and (max-width: 991px) {
-  .site-header .middle-bar .header-wrapper .col-logo img {
+  .site-header .header-wrapper .col-logo img {
     object-fit: contain;
   }
 }
-.site-header .middle-bar .header-wrapper .col-left {
+.site-header .header-wrapper .col-left {
   width: 100%;
   justify-content: space-between;
   align-items: center;
 }
-.site-header .middle-bar .header-wrapper .col-left ul li {
+.site-header .header-wrapper .col-left ul li {
   list-style-type: none;
 }
-.site-header .middle-bar .header-wrapper .col-left ul li a {
+.site-header .header-wrapper .col-left ul li a {
   color: white;
   text-decoration: none;
   font-weight: normal;
   transition: 0.3s;
 }
-.site-header .middle-bar .header-wrapper .col-left ul li.cta-wrapper a {
+.site-header .header-wrapper .col-left ul li.cta-wrapper a {
   padding: 15px 20px;
   background: #123f62;
   border-radius: 10px;
   color: white;
 }
-.site-header .middle-bar .header-wrapper .col-left ul li:hover {
+.site-header .header-wrapper .col-left ul li:hover {
   transition: 0.3s;
 }
-.site-header .middle-bar .header-wrapper .col-left ul li:hover a {
+.site-header .header-wrapper .col-left ul li:hover a {
   color: #36414a;
   transition: 0.3s;
 }
-.site-header .middle-bar .header-wrapper .col-left ul li:hover.cta-wrapper a {
+.site-header .header-wrapper .col-left ul li:hover.cta-wrapper a {
   background: #1e476a;
   color: white;
 }
