@@ -106,10 +106,10 @@
       .sub-menu {
         margin: 0;
         position: absolute;
-        background: white;
+        background: $primary-bg-color;
         width: 150px;
         border-radius: 10px;
-        padding: 10px;
+        padding: 10px 20px;
         left: -10px;
         display: flex;
         flex-direction: column;
@@ -118,6 +118,7 @@
         opacity: 0;
         pointer-events: none;
         z-index: -1;
+        top: 30px;
       }
       &:hover {
         &::after {
