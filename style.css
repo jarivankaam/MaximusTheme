@@ -4970,6 +4970,7 @@ p {
 
 section {
   margin-top: 50px;
+  margin-bottom: 100px;
 }
 
 .section-title + section {
@@ -5006,7 +5007,7 @@ header .container {
 }
 
 .section-gallery .image-wrapper {
-  max-height: 400px;
+  height: 400px;
 }
 .section-gallery .image-wrapper img {
   width: 100%;
