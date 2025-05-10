@@ -21,7 +21,7 @@ $extra_col = $partners ? 1 : 0;
             <div class="section-heading">
                 <h2><?= esc_html($section_title) ?></h2>
                 <?php if ($section_sub_content): ?>
-                    <p class="m-bot-20"><?= esc_html($section_sub_content) ?> Momenteel leidt Dagelijks Bestuur <?= $db ?> onze studentenvereniging.</p>
+                    <p class="m-bot-20"><?= $section_sub_content ?> Momenteel leidt Dagelijks Bestuur <?= $db ?> onze studentenvereniging.</p>
                 <?php endif; ?>
             </div>
         <?php endif; ?>
