@@ -5082,10 +5082,10 @@ body.scrolled .red-bar {
   .site-header .menu-item-has-children .sub-menu {
     margin: 0;
     position: absolute;
-    background: white;
+    background: #1b2b4f;
     width: 150px;
     border-radius: 10px;
-    padding: 10px;
+    padding: 10px 20px;
     left: -10px;
     display: flex;
     flex-direction: column;
@@ -5094,6 +5094,7 @@ body.scrolled .red-bar {
     opacity: 0;
     pointer-events: none;
     z-index: -1;
+    top: 30px;
   }
   .site-header .menu-item-has-children:hover::after {
     content: "\f077";
