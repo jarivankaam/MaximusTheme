@@ -4997,6 +4997,19 @@ header .container {
   padding: 0 !important;
 }
 
+.border-radius-10 {
+  border-radius: 10px;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.section-gallery .image-wrapper {
+  max-width: 100px;
+  max-height: 100px;
+}
+
 .site-header {
   position: fixed;
   width: 100%;
