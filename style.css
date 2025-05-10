@@ -4968,6 +4968,10 @@ p {
   padding-right: 100px;
 }
 
+section {
+  margin-top: 50px;
+}
+
 .site-header {
   background: #1b2b4f;
   position: fixed;
