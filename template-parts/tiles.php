@@ -13,7 +13,7 @@ $col_count = 12 / $tileCount;
 $extra_col;
 
 if($partners) {
-    $extra_col = 0;
+    $extra_col = 1;
 } else {
     $extra_col = 0;
 }
