@@ -5171,6 +5171,9 @@ p {
   max-height: 100%;
   overflow: hidden;
   width: 100%;
+}
+.section-text.partners .image-wrapper img {
+  object-fit: contain;
   border-radius: 10px;
 }
 .section-text .image-wrapper {
