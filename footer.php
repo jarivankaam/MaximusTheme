@@ -105,6 +105,16 @@ $youtube = get_field('youtube', 'options');
        </div>
     </div>
 </footer>
+<script>
+    $(window).on('scroll', function () {
+        if ($(this).scrollTop() > 0) {
+            $('body').addClass('scrolled');
+        } else {
+            $('body').removeClass('scrolled');
+        }
+    });
+
+</script>
 
 <?php edit_post_link('', '', '', get_the_ID(), 'edit-page-link'); ?>
 <?php
