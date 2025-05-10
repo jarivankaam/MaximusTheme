@@ -4972,6 +4972,10 @@ section {
   margin-top: 50px;
 }
 
+.section-title + section {
+  margin-top: 0;
+}
+
 .site-header {
   background: #1b2b4f;
   position: fixed;

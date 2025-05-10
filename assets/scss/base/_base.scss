@@ -79,3 +79,7 @@ $directions: (
 section {
   margin-top: 50px;
 }
+
+.section-title + section {
+  margin-top: 0;
+}
