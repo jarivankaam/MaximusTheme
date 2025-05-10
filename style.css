@@ -4973,6 +4973,10 @@ section {
   margin-bottom: 100px;
 }
 
+.section-title {
+  margin-bottom: 0px !important;
+}
+
 .section-title + section {
   margin-top: 0;
 }
