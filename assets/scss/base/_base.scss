@@ -87,3 +87,11 @@ section {
 h2 {
   font-size: 40px;
 }
+
+body.scrolled {
+  .red-bar {
+    margin-bottom: -35px;
+    z-index: -5;
+    position: relative;
+  }
+}
