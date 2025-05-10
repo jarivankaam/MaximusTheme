@@ -5130,9 +5130,6 @@ p {
 .section-tiles .tile-wrapper .content-wrapper p {
   text-align: center;
 }
-.section-tiles .row {
-  gap: 25px;
-}
 .section-tiles .col-12 {
   position: relative;
   display: flex;
@@ -5160,6 +5157,9 @@ p {
   color: #36414a;
   transition: 0.3s;
   background: #702017;
+}
+.section-tiles.partners .row {
+  gap: 25px;
 }
 
 .section-text {

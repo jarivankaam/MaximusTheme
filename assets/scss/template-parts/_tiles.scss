@@ -48,9 +48,7 @@
       }
     }
   }
-  .row {
-    gap: 25px;
-  }
+
   .col-12 {
     position: relative;
     display: flex;
@@ -77,6 +75,11 @@
           background: $primary_color;
         }
       }
+    }
+  }
+  &.partners {
+    .row {
+      gap: 25px;
     }
   }
 }
