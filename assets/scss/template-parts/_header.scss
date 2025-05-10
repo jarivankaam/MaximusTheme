@@ -104,6 +104,9 @@
         font-size: 12px;
       }
       .sub-menu {
+        @media screen and (max-width: 991px) {
+          margin-top: 15px;
+        }
         margin: 0;
         position: absolute;
         background: $primary-bg-color;
