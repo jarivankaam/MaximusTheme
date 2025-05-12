@@ -114,7 +114,7 @@ $youtube = get_field('youtube', 'options');
         }
     });
      $(document).ready(function() {
-        $(".wrapper").css('margin-top', $("#main-header").outerHeight() + 'px');
+        $(".wrapper").css('margin-top', $(".site-header").outerHeight() + 'px');
      })
 
 </script>
