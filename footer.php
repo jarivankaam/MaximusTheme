@@ -113,6 +113,9 @@ $youtube = get_field('youtube', 'options');
             $('body').removeClass('scrolled');
         }
     });
+     $(document).ready(function() {
+        $(".wrapper").css('margin-top', $("#main-header").outerHeight() + 'px');
+     })
 
 </script>
 
