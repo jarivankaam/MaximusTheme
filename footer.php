@@ -46,7 +46,7 @@ $youtube = get_field('youtube', 'options');
                 </div>
                 <div class="col-12 col-sm-12 col-md-12 col-lg-4">
                 <div class="flex flex-column align-items-center">
-                  <div class="wrapper flex flex-column">
+                  <div class="flex flex-column">
                       <p class="footer-menu-title">Snelle Links</p>
                       <div class="footer-menu">
                           <?php
