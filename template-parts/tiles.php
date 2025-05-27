@@ -58,10 +58,6 @@ $extra_col = $partners ? 1 : 0;
                                         <p><?= $name ?></p>
                                         <p><?= $email ?></p>
                                         <p><?= $school ?></p>
-                                    <?php else :?>
-                                        <?php if (!empty($tile['content'])): ?>
-                                            <p><?= esc_html($tile['content']) ?></p>
-                                        <?php endif; ?>
                                     <?php endif ?>
                                 </div>
                             </div>
