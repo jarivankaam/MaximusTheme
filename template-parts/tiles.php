@@ -9,6 +9,7 @@ $section_sub_content = get_sub_field('section_sub_content');
 $partners = get_sub_field('partners');
 $current = get_sub_field("current");
 $db = get_field("current_db", "options");
+$no_gap = get_sub_field('no_gap');
 
 $tileCount = count($tiles);
 $col_count = $tileCount > 0 ? 12 / $tileCount : 12; // Prevent division by zero
@@ -26,7 +27,7 @@ $extra_col = $partners ? 1 : 0;
             </div>
         <?php endif; ?>
 
-        <div class="row">
+        <div class="row <?= $no_gap ? 'no-gap' : '' ?>">
             <?php foreach ($tiles as $tile): ?>
                 <div class="col-12 col-sm-12 col-md-12 col-lg-<?php if($partners && !$tile['icon']) : ?><?= $col_count ?><?php else: ?><?= round($col_count + $extra_col) ?><?php endif ?>">
                     <?php if (!empty($tile['title']) || !empty($tile['icon'])): ?>

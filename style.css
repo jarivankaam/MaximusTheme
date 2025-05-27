@@ -5439,6 +5439,13 @@ header .container {
   align-items: center;
   justify-content: center;
 }
+.section-tiles .tile-wrapper .content-wrapper .image-wrapper.text-based {
+  width: 200px;
+  height: 200px;
+}
+.section-tiles .tile-wrapper .content-wrapper .image-wrapper.text-based h2 {
+  text-decoration: none;
+}
 .section-tiles .tile-wrapper .content-wrapper .image-wrapper img {
   height: 200px;
   width: 200px;
