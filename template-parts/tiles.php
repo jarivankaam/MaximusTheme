@@ -53,7 +53,9 @@ $extra_col = $partners ? 1 : 0;
                                     <?php endif ?>
                                 </div>
                                 <div class="maxtext flex flex-column align-items-center justify-content-center">
+                                  <?php if($current) : ?>
                                     <p class="bold"><?= esc_html($tile['title']) ?></p>
+                                    <?php endif ?>
                                     <?php if($current) : ?>
                                         <p><?= $name ?></p>
                                         <p><?= $email ?></p>
