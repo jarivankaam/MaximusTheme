@@ -28,7 +28,7 @@ $extra_col = $partners ? 1 : 0;
 
         <div class="row">
             <?php foreach ($tiles as $tile): ?>
-                <div class="col-12 col-sm-12 col-md-12 col-lg- <?php if($partners && !$tile['icon']) : ?><?= $col_count ?><?php else: ?><?= round($col_count + $extra_col) ?><?php endif ?>">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-<?php if($partners && !$tile['icon']) : ?><?= $col_count ?><?php else: ?><?= round($col_count + $extra_col) ?><?php endif ?>">
                     <?php if (!empty($tile['title']) || !empty($tile['icon'])): ?>
                         <?php 
                         $use_link = $partners || !empty($tile['button']);
