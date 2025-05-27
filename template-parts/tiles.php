@@ -28,7 +28,7 @@ $extra_col = $partners ? 1 : 0;
 
         <div class="row">
             <?php foreach ($tiles as $tile): ?>
-                <div class="col-12 col-sm-12 col-md-12 col-lg-<?= round($col_count + $extra_col) ?>">
+                <div class="col-12 col-sm-12 col-md-12 col-lg- <?php if($partners && !$tile['icon']) : ?> <?= $col_count ?> <?php else: ?><?= round($col_count + $extra_col) ?><?php endif ?>">
                     <?php if (!empty($tile['title']) || !empty($tile['icon'])): ?>
                         <?php 
                         $use_link = $partners || !empty($tile['button']);
@@ -44,7 +44,7 @@ $extra_col = $partners ? 1 : 0;
 
                         <<?= $wrapper_tag ?> <?= $use_link ? 'href="' . esc_url($tile_url) . '"' : '' ?> class="tile-wrapper flex justify-content-center">
                             <div class="content-wrapper border-radius-10 flex flex-column align-items-center justify-content-center">
-                                <div class="image-wrapper">
+                                <div class="image-wrapper  <?php if($partners && !$tile['icon']) : ?> text-based <?php endif ?>">
                                     <?php if($partners && !$tile['icon']) : ?>
                                     <h2><?= $tile['title'] ?></h2>
                                     <?php else : ?>
