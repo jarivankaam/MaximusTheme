@@ -5491,6 +5491,9 @@ header .container {
 .section-tiles.partners .row.no-gap {
   gap: unset;
 }
+.section-tiles .tile-wrapper {
+  text-decoration: none;
+}
 
 .section-text {
   margin-top: 50px;
