@@ -87,6 +87,9 @@
   &.partners {
     .row {
       gap: 25px;
+      &.not-gap {
+        gap: unset;
+      }
     }
   }
 }
