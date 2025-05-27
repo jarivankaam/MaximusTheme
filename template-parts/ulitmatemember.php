@@ -8,6 +8,6 @@ $form = get_sub_field("form_id");
 
 <section class="section-ultimatemember">
     <div class="container">
-        [ultimatemember form_id="<?= $form ?>"]
+         <?php echo do_shortcode('[ultimatemember form_id="' . $form . '"]') ?>
     </div>
 </section>
