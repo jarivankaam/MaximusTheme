@@ -5448,6 +5448,7 @@ header .container {
 }
 .section-tiles .tile-wrapper .content-wrapper .image-wrapper h2 {
   transform: scale(1);
+  transition: 0.3s;
 }
 .section-tiles .tile-wrapper .content-wrapper .image-wrapper img {
   height: 200px;
