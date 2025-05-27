@@ -5420,7 +5420,7 @@ header .container {
   padding: 0 50px;
   margin-bottom: 20px;
 }
-.section-tiles .tile-wrapper:hover .content-wrapper .image-wrapper img, .section-tiles .tile-wrapper:active .content-wrapper .image-wrapper img {
+.section-tiles .tile-wrapper:hover .content-wrapper .image-wrapper img, .section-tiles .tile-wrapper:hover .content-wrapper .image-wrapper h2, .section-tiles .tile-wrapper:active .content-wrapper .image-wrapper img, .section-tiles .tile-wrapper:active .content-wrapper .image-wrapper h2 {
   transform: scale(1.1);
   transition: 0.3s;
 }
@@ -5445,6 +5445,9 @@ header .container {
 }
 .section-tiles .tile-wrapper .content-wrapper .image-wrapper.text-based h2 {
   text-decoration: none;
+}
+.section-tiles .tile-wrapper .content-wrapper .image-wrapper h2 {
+  transform: scale(1);
 }
 .section-tiles .tile-wrapper .content-wrapper .image-wrapper img {
   height: 200px;
