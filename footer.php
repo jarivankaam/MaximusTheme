@@ -115,6 +115,7 @@ $youtube = get_field('youtube', 'options');
     });
      $(document).ready(function() {
         $(".wrapper").css('margin-top', $(".site-header").outerHeight() + 'px');
+        $(".section-hero").css('margin-top', '-' + ($(".site-header").outerHeight() - 10 )+ 'px');
      })
 
 </script>
