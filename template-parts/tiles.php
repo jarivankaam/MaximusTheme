@@ -44,12 +44,13 @@ $extra_col = $partners ? 1 : 0;
 
                         <<?= $wrapper_tag ?> <?= $use_link ? 'href="' . esc_url($tile_url) . '"' : '' ?> class="tile-wrapper flex justify-content-center">
                             <div class="content-wrapper border-radius-10 flex flex-column align-items-center justify-content-center">
-                                <?php if (!empty($tile['icon'])): ?>
-                                    <div class="image-wrapper">
+                                <div class="image-wrapper">
+                                    <?php if($partners && !$tile['icon']) : ?>
+                                    <h2><?= $tile['title'] ?></h2>
+                                    <?php else : ?>
                                         <img src="<?= esc_url($tile['icon']) ?>" alt="icon">
-                                    </div>
-                                <?php endif; ?>
-
+                                    <?php endif ?>
+                                </div>
                                 <div class="maxtext flex flex-column align-items-center justify-content-center">
                                     <p class="bold"><?= esc_html($tile['title']) ?></p>
                                     <?php if($current) : ?>
