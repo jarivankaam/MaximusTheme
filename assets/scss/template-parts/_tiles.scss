@@ -12,7 +12,7 @@
     &:hover, &:active {
       .content-wrapper {
         .image-wrapper {
-          img {
+          img, h2 {
             transform:scale(1.1);
             transition: .3s;
           }
@@ -39,6 +39,9 @@
           h2 {
             text-decoration: none;
           }
+        }
+        h2  {
+          transform: scale(1);
         }
         img {
           height: 200px;
