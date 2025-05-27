@@ -5488,7 +5488,7 @@ header .container {
 .section-tiles.partners .row {
   gap: 25px;
 }
-.section-tiles.partners .row.not-gap {
+.section-tiles.partners .row.no-gap {
   gap: unset;
 }
 
