@@ -5936,4 +5936,27 @@ header .container {
   transition: 0.3s;
 }
 
+/* alleen in preview-mode toepassen */
+.section-gallery.mode-preview .gallery-images {
+  overflow: hidden;
+  position: relative;
+  transition: max-height 0.4s ease;
+}
+
+/* knop styling blijft hetzelfde */
+.read-more-btn {
+  display: block;
+  margin: 1.5rem auto 0;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  background: #0056b3;
+  color: #fff;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+.read-more-btn:hover {
+  background: #004494;
+}
+
 /*# sourceMappingURL=style.css.map */
