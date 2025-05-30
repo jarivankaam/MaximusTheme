@@ -6,8 +6,8 @@ $total_images      = is_array($images) ? count($images) : 0;
 $section_title     = get_sub_field('title');
 // Zorg voor fallback naar 'preview' wanneer veld leeg of niet gezet:
 $display_mode      = get_sub_field('gallery_display_mode') ?: 'preview';
-$read_more_label   = get_sub_field('read_more_label') ?: __( 'Read More', 'framework' );
-$show_less_label   = __( 'Show Less', 'framework' );
+$read_more_label   = get_sub_field('read_more_label') ?: __( 'Meer', 'framework' );
+$show_less_label   = __( 'Minder', 'framework' );
 ?>
 
 <section id="<?= esc_attr( $section_id ) ?>"
