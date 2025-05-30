@@ -52,7 +52,7 @@ $show_less_label   = __( 'Show Less', 'framework' );
             const gallery   = section.querySelector('.gallery-images');
             const items     = gallery.querySelectorAll('.gallery-item');
             const btn       = section.querySelector('.read-more-btn');
-            const previewN  = 3;
+            const previewN  = 1;
             let isExpanded  = false;
             let previewMaxH = 0;
 
