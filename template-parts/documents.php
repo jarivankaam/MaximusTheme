@@ -1,52 +1,60 @@
-<?php if( have_rows('files') ): ?>
+<?php
+// Unique ID per repeater row
+$row_index  = get_row_index();
+$section_id = 'section-files-' . $row_index;
+
+// Section title (change to get_field('…') if this is not a sub‐field)
+$section_title = get_sub_field('title');
+?>
+
+<section id="<?= esc_attr( $section_id ) ?>" class="section-files">
     <div class="container">
-        <?php $title = get_sub_field('title'); ?>
-        <?php if ($title): ?>
+
+        <?php if ( $section_title ): ?>
             <div class="section-heading">
-                <h2><?= esc_html($title) ?></h2>
+                <h2><?= esc_html( $section_title ) ?></h2>
             </div>
         <?php endif; ?>
-        <div class="row">
-            <div class="col-12">
-                <ul class="list-unstyled">
-                    <?php
-                    // Loop through each row of the 'files' repeater
-                    while( have_rows('files') ): the_row();
 
-                        // Check the true/false 'location' sub-field
-                        $is_file = get_sub_field('location');
+        <?php if ( have_rows('files') ): ?>
+            <div class="row">
+                <div class="col-12">
+                    <ul class="list-unstyled">
+                        <?php while ( have_rows('files') ): the_row();
 
-                        if( $is_file ):
-                            // If location is true, treat 'file' as an ACF File (Array)
-                            $file = get_sub_field('file');
-                            if( is_array($file) && ! empty($file['url']) && ! empty($file['filename']) ): ?>
-                                <li>
-                                    <a href="<?php echo esc_url( $file['url'] ); ?>" download>
-                                        <?php echo esc_html( $file['filename'] ); ?>
-                                    </a>
-                                </li>
-                            <?php
+                            // Toggle: file vs. link
+                            $is_file = get_sub_field('location');
+
+                            if ( $is_file ):
+                                $file = get_sub_field('file');
+                                $url  = $file['url']      ?? '';
+                                $text = $file['filename'] ?? '';
+                                $attr = ' download';
+                            else:
+                                $url  = get_sub_field('link') ?: '';
+                                $text = $url;
+                                $attr = ' target="_blank" rel="noopener"';
                             endif;
 
-                        else:
-                            // If location is false, treat 'link' as a simple URL text field
-                            $link = get_sub_field('link');
-                            if( ! empty($link) ): ?>
+                            if ( $url && $text ): ?>
                                 <li>
-                                    <a href="<?php echo esc_url( $link ); ?>" target="_blank" rel="noopener">
-                                        <?php echo esc_html( $link ); ?>
+                                    <a href="<?= esc_url( $url ) ?>"<?= $attr ?>>
+                                        <?= esc_html( $text ) ?>
                                     </a>
                                 </li>
-                            <?php
-                            endif;
+                            <?php endif;
 
-                        endif;
-
-                    endwhile; ?>
-                </ul>
+                        endwhile; ?>
+                    </ul>
+                </div>
             </div>
-        </div>
+        <?php else: ?>
+            <div class="row">
+                <div class="col-12">
+                    <p>No items found.</p>
+                </div>
+            </div>
+        <?php endif; ?>
+
     </div>
-<?php else: ?>
-    <p>No items found.</p>
-<?php endif; ?>
+</section>
