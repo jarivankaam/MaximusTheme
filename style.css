@@ -5462,6 +5462,9 @@ header .container {
 .section-tiles .tile-wrapper .content-wrapper p {
   text-align: center;
 }
+.section-tiles .tile-wrapper.disabled .content-wrapper .image-wrapper h2 {
+  color: grey;
+}
 .section-tiles .col-12 {
   position: relative;
   display: flex;
