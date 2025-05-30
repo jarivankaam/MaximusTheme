@@ -1,0 +1,10 @@
+.section-files {
+  .list-unstyled {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    a {
+      color: black;
+    }
+  }
+}
