@@ -5454,15 +5454,15 @@ header .container {
   transform: scale(1);
   transition: 0.3s;
 }
+.section-tiles .tile-wrapper .content-wrapper .image-wrapper.current_db img {
+  object-fit: cover;
+}
 .section-tiles .tile-wrapper .content-wrapper .image-wrapper img {
   height: 200px;
   width: 200px;
   object-fit: contain;
   transform: scale(1);
   transition: 0.3s;
-}
-.section-tiles .tile-wrapper .content-wrapper .image-wrapper img.current_db {
-  object-fit: cover;
 }
 .section-tiles .tile-wrapper .content-wrapper p {
   text-align: center;
