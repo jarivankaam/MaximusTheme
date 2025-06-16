@@ -5461,6 +5461,9 @@ header .container {
   transform: scale(1);
   transition: 0.3s;
 }
+.section-tiles .tile-wrapper .content-wrapper .image-wrapper img.current_db {
+  object-fit: cover;
+}
 .section-tiles .tile-wrapper .content-wrapper p {
   text-align: center;
 }

@@ -53,6 +53,9 @@
           height: 200px;
           width: 200px;
           object-fit: contain;
+          &.current_db {
+            object-fit: cover;
+          }
           transform: scale(1);
           transition: .3s;
         }
