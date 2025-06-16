@@ -185,7 +185,7 @@
         display: flex;
         align-items: baseline;
         padding: 20px;
-        top: 110px;
+        top: 90px;
         flex-direction: column;
         /*
           Move it offscreen by default,
@@ -195,7 +195,7 @@
         transition: transform 0.3s ease-in-out;
 
         /* Optional: Keep it on top of everything */
-        z-index: 99999;
+        z-index: -1;
 
         /*
           When we add an "active" or "open" class,
