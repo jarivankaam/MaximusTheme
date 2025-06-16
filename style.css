@@ -5434,7 +5434,6 @@ header .container {
   overflow: hidden;
   border-radius: 10px;
   background-color: white;
-  padding: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -5442,6 +5441,10 @@ header .container {
 .section-tiles .tile-wrapper .content-wrapper .image-wrapper.text-based {
   width: 200px;
   height: 200px;
+  padding: 20px;
+}
+.section-tiles .tile-wrapper .content-wrapper .image-wrapper.text-based img {
+  padding: 20px;
 }
 .section-tiles .tile-wrapper .content-wrapper .image-wrapper.text-based h2 {
   text-decoration: none;
@@ -5455,7 +5458,6 @@ header .container {
   height: 200px;
   width: 200px;
   object-fit: contain;
-  padding: 20px;
   transform: scale(1);
   transition: 0.3s;
 }
