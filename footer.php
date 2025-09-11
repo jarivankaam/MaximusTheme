@@ -97,7 +97,7 @@ $youtube = get_field('youtube', 'options');
     <div class="section-bottom-footer">
        <div class="container">
            <div class="brand-footer footer flex align-items-center justify-content-center">
-               <p>&copy;<?php echo get_bloginfo('name'); ?> - <?= date("Y"); ?></p><?php if($jarifooter): ?><div class="jarivankaamnl-footer footer flex align-items-center justify-content-center"><p> Ontwikkeld door: <a href="jarivankaam.nl">Jarivankaam.nl</a></p></div><?php endif; ?>
+               <p>&copy;<?php echo get_bloginfo('name'); ?> - <?= date("Y"); ?></p><?php if($jarifooter): ?><div class="jarivankaamnl-footer footer flex align-items-center justify-content-center"><p> Ontwikkeld door: <a href="https://jvkontwikkeling.eu">JVKontwikkeling</a></p></div><?php endif; ?>
            </div>
 
 
