@@ -10,7 +10,7 @@ $reset = get_sub_field('reset');
 <section class="section-ultimatemember">
     <div class="container">
         <?php if($reset) : ?>
-            [ultimatemember_password]
+            <?= do_shortcode('[ultimatemember_password]') ?>
         <?php else: ?>
             <?php echo do_shortcode('[ultimatemember form_id="' . $form . '"]') ?>
         <?php endif; ?>
