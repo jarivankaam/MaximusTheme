@@ -102,7 +102,8 @@ if (!function_exists('convert_to_embed_url')) {
             <?php elseif ($use_form && $wpforms_form) : ?>
                 <div class="col-12 col-sm-12 col-md-12 col-lg-6">
                     <div class="form-wrapper">
-                        <?php echo do_shortcode('[wpforms id="' . $wpforms_form . '" title="false"]'); ?>
+                        <?php echo do_shortcode('[gravityform id="' . $wpforms_form . '" title="false"]'); ?>
+                          
                     </div>
                 </div>
             <?php elseif ($spotify) : ?>
