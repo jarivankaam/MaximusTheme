@@ -24,9 +24,9 @@
                 $layout = get_row_layout(); // Get the layout of the current row
                 get_template_part('template-parts/' . $layout); // Correct path and usage
             }
+        } else {
+            the_content();
         }
-
-
     endwhile;
     ?>
 
