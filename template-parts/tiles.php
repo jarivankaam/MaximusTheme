@@ -16,6 +16,24 @@ $col_count = $tileCount > 0 ? 12 / $tileCount : 12; // Prevent division by zero
 $extra_col = $partners ? 1 : 0;
 ?>
 
+<style>
+    .page-id-310 .tile-wrapper {
+        padding: 0 !important;
+    }
+
+    .page-id-310 .content-wrapper {
+        width: 1005;
+        height: 100%;
+    }
+    .page-id-310 .image-wrapper {
+            width: 100%;
+            max-width: 100%;
+            height: 200px;
+            padding: 20px;
+    }
+
+</style>
+
 <section id="<?= esc_attr($section_id) ?>" class="section-tiles <?= $partners ? 'partners' : '' ?>">
     <div class="container">
         <?php if ($section_title): ?>
