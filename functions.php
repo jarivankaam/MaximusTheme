@@ -25,12 +25,7 @@ function my_acf_json_save_point( $path ) {
 add_filter('acf/settings/save_json', 'my_acf_json_save_point');
 
 // Enqueue custom JavaScript properly.
-function enqueue_custom_scripts() {
-    wp_enqueue_script( 'custom-js', get_template_directory_uri() . '/index.js', array(), null, true );
-}
-add_action( 'wp_enqueue_scripts', 'enqueue_custom_scripts' );
 
-wp_enqueue_style('livenow-style', get_stylesheet_uri(), array(), filemtime(get_stylesheet_directory() . '/style.css'));
 
 // Add viewport meta tag and Font Awesome kit in the header.
 function mytheme_add_viewport_meta_tag() {
@@ -39,4 +34,11 @@ function mytheme_add_viewport_meta_tag() {
     echo '<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>';
 }
 add_action( 'wp_head', 'mytheme_add_viewport_meta_tag' );
+
+function enqueue_custom_scripts() {
+    wp_enqueue_script( 'custom-js', get_template_directory_uri() . '/index.js', array(), null, true );
+}
+add_action( 'wp_enqueue_scripts', 'enqueue_custom_scripts' );
+
+wp_enqueue_style('livenow-style', get_stylesheet_uri(), array(), filemtime(get_stylesheet_directory() . '/style.css'));
 ?>

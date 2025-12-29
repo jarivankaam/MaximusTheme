@@ -1,8 +1,6 @@
 <?php
 $row_index         = get_row_index();
 $section_id        = 'section-' . $row_index;
-$images = "";
-$total_images      = is_array($images) ? count($images) : 0;
 $section_title     = get_sub_field('title');
 // Zorg voor fallback naar 'preview' wanneer veld leeg of niet gezet:
 $display_mode      = get_sub_field('gallery_display_mode') ?: 'preview';
@@ -16,6 +14,8 @@ if(!$type_of_page) {
 } else {
     $images = get_sub_field('images');
 }
+
+$total_images      = is_array($images) ? count($images) : 0;
 ?>
 
 <section id="<?= esc_attr( $section_id ) ?>"
