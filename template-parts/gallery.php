@@ -1,7 +1,7 @@
 <?php
 $row_index         = get_row_index();
 $section_id        = 'section-' . $row_index;
-$images;
+$images = "";
 $total_images      = is_array($images) ? count($images) : 0;
 $section_title     = get_sub_field('title');
 // Zorg voor fallback naar 'preview' wanneer veld leeg of niet gezet:
