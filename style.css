@@ -5589,7 +5589,7 @@ header .container {
     flex-direction: column;
   }
 }
-.cta-wrapper a {
+.section-text .cta-wrapper a {
   width: 40%;
   padding: 15px;
   background: #1b2b4f !important;
