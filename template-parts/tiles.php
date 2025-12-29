@@ -22,14 +22,12 @@ $extra_col = $partners ? 1 : 0;
     }
 
     .page-id-310 .content-wrapper {
-        width: 1005;
-        height: 100%;
+        width: 1005 !important;
+        height: 100% !important;
     }
     .page-id-310 .image-wrapper.text-based {
-            width: 100%;
-            max-width: 100%;
-            height: 200px;
-            padding: 20px;
+            width: 100% !important;
+            max-width: 100% !important;
     }
 
 </style>
