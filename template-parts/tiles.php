@@ -25,7 +25,7 @@ $extra_col = $partners ? 1 : 0;
         width: 1005;
         height: 100%;
     }
-    .page-id-310 .image-wrapper {
+    .page-id-310 .image-wrapper.text-based {
             width: 100%;
             max-width: 100%;
             height: 200px;
