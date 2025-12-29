@@ -1,17 +1,25 @@
 <?php
 $row_index         = get_row_index();
 $section_id        = 'section-' . $row_index;
-$images            = get_sub_field('images');
+$images;
 $total_images      = is_array($images) ? count($images) : 0;
 $section_title     = get_sub_field('title');
 // Zorg voor fallback naar 'preview' wanneer veld leeg of niet gezet:
 $display_mode      = get_sub_field('gallery_display_mode') ?: 'preview';
 $read_more_label   = get_sub_field('read_more_label') ?: __( 'Meer', 'framework' );
 $show_less_label   = __( 'Minder', 'framework' );
+$type_of_page = get_sub_field('type_of_page');
+$album = get_sub_field('album');
+
+if(!$type_of_page) {
+    $images = get_sub_field('images_preview');
+} else {
+    $images = get_sub_field('images');
+}
 ?>
 
 <section id="<?= esc_attr( $section_id ) ?>"
-         class="section-gallery mode-<?= esc_attr( $display_mode ) ?>">
+         class="section-gallery <? if($type_of_page): ?>mode-<?= esc_attr( $display_mode ) ?><?php endif; ?>">
     <div class="container">
 
         <?php if ( $section_title ) : ?>
@@ -34,11 +42,14 @@ $show_less_label   = __( 'Minder', 'framework' );
                 </div>
             </div>
 
-            <?php if ( $display_mode === 'preview' && $total_images > 3 ) : ?>
+            <?php if ( $display_mode === 'preview' && $total_images > 3 && $type_of_page ) : ?>
                 <button class="read-more-btn">
                     <?= esc_html( $read_more_label ) ?>
                 </button>
             <?php endif; ?>
+            <?php if(!$type_of_page && $album) : ?>
+                 <a href="<? $album ?>" class="cta">Naar Album</a>
+            <?php endif ?>
 
         <?php else: ?>
             <p><?= __( 'No images available.', 'framework' ) ?></p>
