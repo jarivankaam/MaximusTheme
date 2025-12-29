@@ -23,7 +23,7 @@ $extra_col = $partners ? 1 : 0;
     }
 
     .page-id-310 .content-wrapper {
-        width: 1005 !important;
+        width: 100% !important;
         height: 100% !important;
     }
     .page-id-310 .image-wrapper.text-based {
