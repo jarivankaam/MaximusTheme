@@ -19,7 +19,7 @@ if(!$type_of_page) {
 ?>
 
 <section id="<?= esc_attr( $section_id ) ?>"
-         class="section-gallery <? if($type_of_page): ?>mode-<?= esc_attr( $display_mode ) ?><?php endif; ?>">
+         class="section-gallery <?php if($type_of_page): ?>mode-<?= esc_attr( $display_mode ) ?><?php endif; ?>">
     <div class="container">
 
         <?php if ( $section_title ) : ?>
