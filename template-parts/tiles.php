@@ -19,6 +19,7 @@ $extra_col = $partners ? 1 : 0;
 <style>
     .page-id-310 .tile-wrapper {
         padding: 0 !important;
+        width: 100% !important;
     }
 
     .page-id-310 .content-wrapper {
