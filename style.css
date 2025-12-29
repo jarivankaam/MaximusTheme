@@ -5578,14 +5578,14 @@ header .container {
 .section-text .second-image-col {
   gap: 5px;
 }
-.cta-wrapper {
+.section-text .cta-wrapper {
   display: flex;
   align-items: center;
   justify-content: space-around;
   margin-top: 10px;
 }
 @media screen and (max-width: 991px) {
-  .cta-wrapper {
+  .section-text .cta-wrapper {
     flex-direction: column;
   }
 }
@@ -5601,7 +5601,7 @@ header .container {
   text-decoration: none;
 }
 @media screen and (max-width: 991px) {
-  .cta-wrapper a {
+  .section-text .cta-wrapper a {
     width: 100%;
   }
 }
