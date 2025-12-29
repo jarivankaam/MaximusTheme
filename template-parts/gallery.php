@@ -32,7 +32,7 @@ $total_images      = is_array($images) ? count($images) : 0;
             <div class="gallery-images">
                 <div class="row g-3">
                     <?php foreach ( $images as $image ) : ?>
-                        <div class="col-12 col-sm-6<?php if($type_of_page) : ?> col-md-4 col-lg-4 <?php else: ?> col-md-2 col-lg-2 <?php endif; ?> gallery-item">
+                        <div class="col-12 col-sm-6<?php if($type_of_page) : ?> col-md-4 col-lg-4 <?php else: ?> col-md-3 col-lg-3 <?php endif; ?> gallery-item">
                             <div class="image-wrapper overflow-hidden border-radius-10">
                                 <img src="<?= esc_url( $image['url'] ) ?>"
                                      alt="<?= esc_attr( $image['alt'] ) ?>">
