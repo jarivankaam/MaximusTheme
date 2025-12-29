@@ -48,7 +48,9 @@ $total_images      = is_array($images) ? count($images) : 0;
                 </button>
             <?php endif; ?>
             <?php if(!$type_of_page && $album) : ?>
-                 <a href="<? $album ?>" class="cta">Naar Album</a>
+                <div class="cta-wrapper">
+                    <a href="<? $album ?>" class="cta">Naar Album</a>
+                 </div>
             <?php endif ?>
 
         <?php else: ?>
