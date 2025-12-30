@@ -9,7 +9,7 @@ if ( ! empty( $birthdays ) ) : ?>
     <section class="section-birthdays">
        <div class="container">
             <ul class="um-birthdays-list">
-                <p>Verjaardagen:</p>
+                <p>Verjaardagen deze maand:</p>
                 <?php foreach ( $birthdays as $item ) : 
                     $user = $item['user'];
                 ?>
