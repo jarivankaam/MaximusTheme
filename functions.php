@@ -33,8 +33,6 @@ function mytheme_add_viewport_meta_tag() {
     echo '<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0">';
     echo '<script src="https://kit.fontawesome.com/79f79ff0fc.js" crossorigin="anonymous"></script>';
     echo '<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>';
-    echo `<script>window.$ujq=window.$ujq||[];window.uj=window.uj||new Proxy({},{get:(_,p)=>(...a)=>window.$ujq.push([p,...a])});document.head.appendChild(Object.assign(document.createElement('script'),{src:'https://cdn.userjot.com/sdk/v2/uj.js',type:'module',async:!0}));</script>`;
-    echo `<script>window.uj.init('cmjsx3v7l056w15ldonq8h2o7', {widget: true,position: 'right',theme: 'auto'});</script>`;
 }
 add_action( 'wp_head', 'mytheme_add_viewport_meta_tag' );
 
