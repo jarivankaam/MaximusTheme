@@ -1,6 +1,6 @@
 <?php
 // Example: current month
-$birthdays = evx_get_um_birthdays_by_month();
+$birthdays = evx_get_um_birthdays_by_month(12);
 
 // Or for a specific month, e.g. December:
 // $birthdays = evx_get_um_birthdays_by_month(12);
