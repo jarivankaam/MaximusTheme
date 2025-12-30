@@ -6057,6 +6057,7 @@ header .container {
     display: flex;
     justify-content: center;
     flex-direction: column;
+    border-radius: 10px;
     ul {
       li {
         color: white;
