@@ -6050,5 +6050,13 @@ header .container {
   background: #004494;
 }
 
+.section-birthdays {
+  .um-birthdays-list {
+    background: red;
+    padding: 20px;
+  }
+}
+
+
 
 
