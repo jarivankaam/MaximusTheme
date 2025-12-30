@@ -6061,9 +6061,11 @@ header .container {
     border-radius: 10px;
     p {
       color: white;
+      font-size: 1.2em;
     }
     li {
       text-decoration: none;
+      list-style: none;
       a,
       span {
         color: white;
