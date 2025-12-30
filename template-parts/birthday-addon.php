@@ -6,7 +6,7 @@ $birthdays = evx_get_um_birthdays_by_month();
 // $birthdays = evx_get_um_birthdays_by_month(12);
 
 if ( ! empty( $birthdays ) ) : ?>
-    <section class="um-birthdays-this-month">
+    <section class="section-birthdays">
        <div class="container">
             <ul class="um-birthdays-list">
                 <p>Verjaardagen:</p>

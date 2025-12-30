@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "watch:scss": "sass --watch ./assets/scss/style.scss  ./style.css",
-    "scss": "sass ./assets/scss/style.scss  ./style.css",
+    "build": "webpack --mode production",
+    "dev": "webpack serve --mode development",
     "test": "snyk test",
     "monitor": "snyk monitor"
   },
@@ -21,7 +21,14 @@
   },
   "homepage": "https://github.com/jarivankaam/framework-boilerplate#readme",
   "devDependencies": {
+    "css-loader": "^7.1.2",
+    "mini-css-extract-plugin": "^2.9.4",
     "sass": "^1.57.1",
-    "snyk": "^1.1085.0"
+    "sass-loader": "^16.0.6",
+    "snyk": "^1.1085.0",
+    "style-loader": "^4.0.0",
+    "webpack": "^5.104.1",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.2"
   }
 }
