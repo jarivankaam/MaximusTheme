@@ -6055,8 +6055,13 @@ header .container {
     background: #702017;
     padding: 20px;
     display: flex;
-    align-items: center;
     justify-content: center;
+    flex-direction: column;
+    ul {
+      li {
+        color: white;
+      }
+    }
   }
 }
 
