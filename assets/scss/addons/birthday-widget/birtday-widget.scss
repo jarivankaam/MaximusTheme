@@ -7,15 +7,14 @@
     align-items: center;
     flex-direction: column;
     border-radius: 10px;
-    ul {
-      p {
+    p {
+      color: white;
+    }
+    li {
+      text-decoration: none;
+      a,
+      span {
         color: white;
-      }
-      li {
-        a,
-        span {
-          color: white;
-        }
       }
     }
   }
