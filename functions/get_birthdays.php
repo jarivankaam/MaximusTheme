@@ -14,54 +14,54 @@
  */
 function evx_get_um_birthdays_by_month( $month = null, $meta_key = null ) {
 
-    // Set defaults
     if ( $month === null ) {
         $month = (int) date( 'm' );
     }
-    $month = max( 1, min( 12, (int) $month ) ); // clamp 1–12
-    $month_str = str_pad( (string) $month, 2, '0', STR_PAD_LEFT );
 
-    // Change this to your actual UM birthday field meta key
     if ( $meta_key === null ) {
-        $meta_key = 'birth_date'; // e.g. 'date_of_birth', 'dob', etc.
+        $meta_key = 'birth_date';
     }
 
-    // Query all users whose birthday meta contains "-MM-"
+    // Fetch all users who have the field set
     $users = get_users( array(
         'number'     => -1,
-        'meta_query' => array(
-            array(
-                'key'     => $meta_key,
-                'value'   => '-' . $month_str . '-',
-                'compare' => 'LIKE',
-            ),
-        ),
-        'orderby' => 'display_name',
-        'order'   => 'ASC',
-        'fields'  => 'all',
+        'meta_key'   => $meta_key,
+        'orderby'    => 'display_name',
+        'order'      => 'ASC',
+        'fields'     => 'all',
     ) );
-
-    if ( empty( $users ) ) {
-        return array();
-    }
 
     $results = array();
 
     foreach ( $users as $user ) {
+
         $raw_date = get_user_meta( $user->ID, $meta_key, true );
 
-        // Try to format nicely (assumes YYYY-MM-DD)
-        $formatted_date = '';
-        if ( $raw_date ) {
-            $timestamp = strtotime( $raw_date );
-            if ( $timestamp ) {
-                $formatted_date = date_i18n( 'j F', $timestamp ); // e.g. 23 April
-            } else {
-                $formatted_date = $raw_date;
-            }
+        if ( ! $raw_date ) {
+            continue;
         }
 
-        // UM profile URL (fallback to author page)
+        /**
+         * strtotime() is tolerant:
+         * - "1999-04-23"  (ISO)
+         * - "23-04-1999"  (Dutch)
+         * - "23/04/1999"
+         */
+        $timestamp = strtotime( str_replace('/', '-', $raw_date ) );
+
+        if ( ! $timestamp ) {
+            continue; // skip invalid dates
+        }
+
+        $stored_month = (int) date( 'm', $timestamp );
+
+        if ( $stored_month !== (int) $month ) {
+            continue;
+        }
+
+        // Output formatted date in a nice localized format
+        $formatted_date = date_i18n( 'j F', $timestamp );
+
         if ( function_exists( 'um_user_profile_url' ) ) {
             $profile_url = um_user_profile_url( $user->ID );
         } else {
