@@ -1,9 +1,5 @@
 <?php
 add_shortcode('lichting_directory', function () {
-    if ( ! is_user_logged_in() ) {
-        return '<p>You must be logged in to view this directory.</p>';
-    }
-
     // --- Config (must match UM meta keys exactly) ---
     $meta_key_lichting = 'LichtingNew';
     $meta_key_commisie = 'Comissie';
