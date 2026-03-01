@@ -6,12 +6,12 @@ add_shortcode('lichting_directory', function () {
 
     // --- Config (must match your UM meta keys exactly) ---
     $meta_key_lichting = 'LichtingNew';
-    $meta_key_commisie = 'Comissie';
+    $meta_key_commisie = 'commisie';
 
     $q = isset($_GET['q']) ? sanitize_text_field($_GET['q']) : '';
 
     /**
-     * Normalize multiselect meta to array of strings.
+     * Normalize multiselect meta to array
      * Handles: array, serialized array, comma-separated string, single string.
      */
     $to_array = function ($raw): array {
@@ -28,17 +28,16 @@ add_shortcode('lichting_directory', function () {
             }
         }
 
-        $arr = array_values(array_filter(array_map(fn($v) => trim((string)$v), $arr), fn($v) => $v !== ''));
-        return $arr;
+        return array_values(array_filter(array_map(fn($v) => trim((string)$v), $arr), fn($v) => $v !== ''));
     };
 
-    // Fetch users (broad so we can bucket missing values)
+    // Fetch users (broad; we’ll include/exclude per section)
     $users = get_users([
         'number' => 9999,
         'fields' => ['ID', 'display_name', 'user_login'],
     ]);
 
-    // Filter by search query (display_name / user_login)
+    // Search filter (applies to both sections)
     if ($q !== '') {
         $qq = mb_strtolower($q);
         $users = array_values(array_filter($users, function($u) use ($qq) {
@@ -48,24 +47,23 @@ add_shortcode('lichting_directory', function () {
         }));
     }
 
-    // --- Group 1: Lichting tiles ---
+    // --- Group 1: Lichting tiles (only if lichting has a value) ---
     $grouped_lichting = []; // [lichting][] = user
     foreach ($users as $u) {
-        $lichting = get_user_meta($u->ID, $meta_key_lichting, true);
-        $lichting = trim((string)$lichting);
-        if ($lichting === '') $lichting = 'Onbekend';
+        $lichting = trim((string) get_user_meta($u->ID, $meta_key_lichting, true));
+        if ($lichting === '') {
+            continue; // exclude from lichting section
+        }
         $grouped_lichting[$lichting][] = $u;
     }
     uksort($grouped_lichting, fn($a,$b) => strnatcasecmp((string)$a, (string)$b));
 
-    // --- Group 2: Commisie tiles (multiselect) ---
+    // --- Group 2: Commisie tiles (only if commisie has at least 1 value) ---
     $grouped_commisie = []; // [commisie][] = user
     foreach ($users as $u) {
-        $commisies_raw = get_user_meta($u->ID, $meta_key_commisie, true);
-        $commisies = $to_array($commisies_raw);
-
+        $commisies = $to_array(get_user_meta($u->ID, $meta_key_commisie, true));
         if (empty($commisies)) {
-            $commisies = ['Geen commissie'];
+            continue; // exclude from commisie section
         }
 
         foreach ($commisies as $c) {
@@ -85,11 +83,10 @@ add_shortcode('lichting_directory', function () {
             <?php endif; ?>
         </form>
 
-        <?php if (empty($users)): ?>
-            <p>Geen leden gevonden.</p>
+        <h2 class="grid-heading">Lichtingen</h2>
+        <?php if (empty($grouped_lichting)): ?>
+            <p>Geen leden met een lichting gevonden.</p>
         <?php else: ?>
-
-            <h2 class="grid-heading">Lichtingen</h2>
             <div class="tile-grid">
                 <?php foreach ($grouped_lichting as $lichting => $members): ?>
                     <div class="tile">
@@ -109,8 +106,12 @@ add_shortcode('lichting_directory', function () {
                     </div>
                 <?php endforeach; ?>
             </div>
+        <?php endif; ?>
 
-            <h2 class="grid-heading">Commissies</h2>
+        <h2 class="grid-heading">Commissies</h2>
+        <?php if (empty($grouped_commisie)): ?>
+            <p>Geen leden met een commissie gevonden.</p>
+        <?php else: ?>
             <div class="tile-grid">
                 <?php foreach ($grouped_commisie as $commisie => $members): ?>
                     <div class="tile">
@@ -130,7 +131,6 @@ add_shortcode('lichting_directory', function () {
                     </div>
                 <?php endforeach; ?>
             </div>
-
         <?php endif; ?>
     </div>
 
