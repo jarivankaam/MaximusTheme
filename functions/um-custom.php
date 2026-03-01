@@ -6,7 +6,7 @@ add_shortcode('lichting_directory', function () {
 
     // --- Config (must match UM meta keys exactly) ---
     $meta_key_lichting = 'LichtingNew';
-    $meta_key_commisie = 'commisie';
+    $meta_key_commisie = 'comissie';
     $meta_key_senaat   = 'senaat';
 
     $q = isset($_GET['q']) ? sanitize_text_field($_GET['q']) : '';
@@ -145,7 +145,7 @@ add_shortcode('lichting_directory', function () {
         <?php endif; ?>
 
         <!-- SENAAT -->
-        <h2 class="grid-heading">Senaat</h2>
+        <h2 class="grid-heading">Dagelijks Bestuur</h2>
         <?php if (empty($grouped_senaat)): ?>
             <p>Geen leden met een senaat gevonden.</p>
         <?php else: ?>
@@ -153,7 +153,7 @@ add_shortcode('lichting_directory', function () {
                 <?php foreach ($grouped_senaat as $senaat => $members): ?>
                     <div class="tile">
                         <div class="tile-title">
-                            <?php echo esc_html($senaat); ?>
+                            DB: <?php echo esc_html($senaat); ?>
                             <span class="count">(<?php echo count($members); ?>)</span>
                         </div>
                         <ul class="members">
