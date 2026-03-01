@@ -4,56 +4,80 @@ add_shortcode('lichting_directory', function () {
         return '<p>You must be logged in to view this directory.</p>';
     }
 
-    // --- Config ---
-    $meta_key_lichting = 'LichtingNew';   // IMPORTANT: must match your UM field meta key
+    // --- Config (must match your UM meta keys exactly) ---
+    $meta_key_lichting = 'LichtingNew';
+    $meta_key_commisie = 'commisie';
+
     $q = isset($_GET['q']) ? sanitize_text_field($_GET['q']) : '';
-    $q_like = '%' . $q . '%';
 
-    // Fetch users who have a lichting set
-    $user_query_args = [
-        'number'   => 9999, // fine for small/medium sites; later you can paginate
-        'orderby'  => 'meta_value',
-        'order'    => 'ASC',
-        'meta_key' => $meta_key_lichting,
-        'meta_query' => [
-            [
-                'key'     => $meta_key_lichting,
-                'compare' => 'EXISTS',
-            ],
-        ],
+    /**
+     * Normalize multiselect meta to array of strings.
+     * Handles: array, serialized array, comma-separated string, single string.
+     */
+    $to_array = function ($raw): array {
+        if (is_array($raw)) {
+            $arr = $raw;
+        } else {
+            $maybe = maybe_unserialize($raw);
+            if (is_array($maybe)) {
+                $arr = $maybe;
+            } else {
+                $raw = trim((string)$raw);
+                if ($raw === '') return [];
+                $arr = preg_split('/\s*,\s*/', $raw);
+            }
+        }
+
+        $arr = array_values(array_filter(array_map(fn($v) => trim((string)$v), $arr), fn($v) => $v !== ''));
+        return $arr;
+    };
+
+    // Fetch users (broad so we can bucket missing values)
+    $users = get_users([
+        'number' => 9999,
         'fields' => ['ID', 'display_name', 'user_login'],
-    ];
+    ]);
 
-    $users = get_users($user_query_args);
-
-    // Filter by search query (display_name / user_login). You can extend to other meta fields later.
+    // Filter by search query (display_name / user_login)
     if ($q !== '') {
-        $users = array_values(array_filter($users, function($u) use ($q) {
-            $dn = mb_strtolower($u->display_name);
-            $ul = mb_strtolower($u->user_login);
-            $qq = mb_strtolower($q);
+        $qq = mb_strtolower($q);
+        $users = array_values(array_filter($users, function($u) use ($qq) {
+            $dn = mb_strtolower((string)$u->display_name);
+            $ul = mb_strtolower((string)$u->user_login);
             return str_contains($dn, $qq) || str_contains($ul, $qq);
         }));
     }
 
-    // Group users by Lichting
-    $grouped = [];
+    // --- Group 1: Lichting tiles ---
+    $grouped_lichting = []; // [lichting][] = user
     foreach ($users as $u) {
         $lichting = get_user_meta($u->ID, $meta_key_lichting, true);
-        $lichting = $lichting !== '' ? $lichting : 'Onbekend';
-        $grouped[$lichting][] = $u;
+        $lichting = trim((string)$lichting);
+        if ($lichting === '') $lichting = 'Onbekend';
+        $grouped_lichting[$lichting][] = $u;
     }
+    uksort($grouped_lichting, fn($a,$b) => strnatcasecmp((string)$a, (string)$b));
 
-    // Sort groups naturally (e.g. 2023, 2024, 2025)
-    uksort($grouped, function($a,$b){
-        return strnatcasecmp((string)$a, (string)$b);
-    });
+    // --- Group 2: Commisie tiles (multiselect) ---
+    $grouped_commisie = []; // [commisie][] = user
+    foreach ($users as $u) {
+        $commisies_raw = get_user_meta($u->ID, $meta_key_commisie, true);
+        $commisies = $to_array($commisies_raw);
 
-    // Build output
+        if (empty($commisies)) {
+            $commisies = ['Geen commissie'];
+        }
+
+        foreach ($commisies as $c) {
+            $grouped_commisie[$c][] = $u;
+        }
+    }
+    uksort($grouped_commisie, fn($a,$b) => strnatcasecmp((string)$a, (string)$b));
+
     ob_start();
     ?>
-    <div class="lichting-directory">
-        <form class="lichting-search" method="get">
+    <div class="member-directory">
+        <form class="member-search" method="get">
             <input type="text" name="q" value="<?php echo esc_attr($q); ?>" placeholder="Zoek lid..." />
             <button type="submit">Zoeken</button>
             <?php if ($q !== ''): ?>
@@ -61,37 +85,67 @@ add_shortcode('lichting_directory', function () {
             <?php endif; ?>
         </form>
 
-        <div class="lichting-grid">
-            <?php foreach ($grouped as $lichting => $members): ?>
-                <div class="lichting-tile">
-                    <div class="lichting-title">
-                        Lichting: <?php echo esc_html($lichting); ?>
-                        <span class="count">(<?php echo count($members); ?>)</span>
-                    </div>
+        <?php if (empty($users)): ?>
+            <p>Geen leden gevonden.</p>
+        <?php else: ?>
 
-                    <ul class="members">
-                        <?php foreach ($members as $m): ?>
-                            <li>
-                                <a href="<?php echo esc_url( um_user_profile_url($m->ID) ); ?>">
-                                    <?php echo esc_html($m->display_name); ?>
-                                </a>
-                            </li>
-                        <?php endforeach; ?>
-                    </ul>
-                </div>
-            <?php endforeach; ?>
-        </div>
+            <h2 class="grid-heading">Lichtingen</h2>
+            <div class="tile-grid">
+                <?php foreach ($grouped_lichting as $lichting => $members): ?>
+                    <div class="tile">
+                        <div class="tile-title">
+                            Lichting: <?php echo esc_html($lichting); ?>
+                            <span class="count">(<?php echo count($members); ?>)</span>
+                        </div>
+                        <ul class="members">
+                            <?php foreach ($members as $m): ?>
+                                <li>
+                                    <a href="<?php echo esc_url( um_user_profile_url($m->ID) ); ?>">
+                                        <?php echo esc_html($m->display_name); ?>
+                                    </a>
+                                </li>
+                            <?php endforeach; ?>
+                        </ul>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+
+            <h2 class="grid-heading">Commissies</h2>
+            <div class="tile-grid">
+                <?php foreach ($grouped_commisie as $commisie => $members): ?>
+                    <div class="tile">
+                        <div class="tile-title">
+                            Commisie: <?php echo esc_html($commisie); ?>
+                            <span class="count">(<?php echo count($members); ?>)</span>
+                        </div>
+                        <ul class="members">
+                            <?php foreach ($members as $m): ?>
+                                <li>
+                                    <a href="<?php echo esc_url( um_user_profile_url($m->ID) ); ?>">
+                                        <?php echo esc_html($m->display_name); ?>
+                                    </a>
+                                </li>
+                            <?php endforeach; ?>
+                        </ul>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+
+        <?php endif; ?>
     </div>
 
     <style>
-        .lichting-search{display:flex;gap:.5rem;align-items:center;margin:1rem 0}
-        .lichting-search input{flex:1;max-width:420px;padding:.5rem}
-        .lichting-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem}
-        .lichting-tile{border:1px solid #ddd;border-radius:12px;padding:1rem;background:#fff}
-        .lichting-title{font-weight:700;margin-bottom:.5rem;display:flex;gap:.5rem;align-items:baseline}
+        .member-search{display:flex;gap:.5rem;align-items:center;margin:1rem 0}
+        .member-search input{flex:1;max-width:420px;padding:.5rem}
+        .clear{margin-left:.5rem}
+
+        .grid-heading{margin:1.25rem 0 .75rem;font-size:1.25rem}
+        .tile-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem}
+
+        .tile{border:1px solid #ddd;border-radius:12px;padding:1rem;background:#fff}
+        .tile-title{font-weight:700;margin-bottom:.5rem;display:flex;gap:.5rem;align-items:baseline}
         .members{margin:0;padding-left:1.1rem}
         .members li{margin:.25rem 0}
-        .clear{margin-left:.5rem}
     </style>
     <?php
     return ob_get_clean();
