@@ -6,7 +6,7 @@ add_shortcode('lichting_directory', function () {
 
     // --- Config (must match your UM meta keys exactly) ---
     $meta_key_lichting = 'LichtingNew';
-    $meta_key_commisie = 'commisie';
+    $meta_key_commisie = 'Comissie';
 
     $q = isset($_GET['q']) ? sanitize_text_field($_GET['q']) : '';
 
