@@ -28,5 +28,11 @@ if ( ! empty( $birthdays ) ) : ?>
         </div>
     </section>
 <?php else : ?>
-    <p>No birthdays this month.</p>
+    <section class="section-birthdays">
+            <div class="container">
+                <ul class="um-birthdays-list">
+                    <p>No birthdays this month.</p>
+                </ul>
+            </div>
+    </section>
 <?php endif; ?>
