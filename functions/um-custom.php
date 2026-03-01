@@ -101,7 +101,7 @@ add_shortcode('lichting_directory', function () {
                 <?php foreach ($grouped_lichting as $lichting => $members): ?>
                     <div class="tile">
                         <div class="tile-title">
-                            <?php echo esc_html($lichting); ?>
+                           Lichting <?php echo esc_html($lichting); ?>
                             <span class="count">(<?php echo count($members); ?>)</span>
                         </div>
                         <ul class="members">
