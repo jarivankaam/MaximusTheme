@@ -8,7 +8,7 @@ $shortcode = get_sub_field("shortcode");
 ?>
 
 <section class="section-shortcode">
-    <div class="container">
-        <?= do_shortcode($shortcode) ?>
+    <div class="container"> 
+        <?= do_shortcode(`$shortcode`) ?>
     </div>
 </section>
