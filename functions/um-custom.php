@@ -79,15 +79,15 @@ add_shortcode('lichting_directory', function () {
     ob_start();
     ?>
     <div class="member-directory">
-        <div class="flex justify-content-between">
-        <form class="member-search" method="get">
-            <input type="text" name="q" value="<?php echo esc_attr($q); ?>" placeholder="Zoek lid..." />
-            <button type="submit">Zoeken</button>
-            <?php if ($q !== ''): ?>
-                <a class="clear" href="<?php echo esc_url(remove_query_arg('q')); ?>">Wissen</a>
-            <?php endif; ?>
-        </form>
-        <a href="#">Alle leden</a>
+        <div class="flex wrappper-search">
+            <form class="member-search" method="get">
+                <input type="text" name="q" value="<?php echo esc_attr($q); ?>" placeholder="Zoek lid..." />
+                <button type="submit">Zoeken</button>
+                <?php if ($q !== ''): ?>
+                    <a class="clear" href="<?php echo esc_url(remove_query_arg('q')); ?>">Wissen</a>
+                <?php endif; ?>
+            </form>
+            <a href="https://sv-maximus.nl/members/">Alle leden</a>
         </div>
 
         <!-- LICHTING -->
@@ -210,6 +210,11 @@ add_shortcode('lichting_directory', function () {
         .members li .flex {
             align-items: center;
             gap: 10px;
+        }
+
+        .wrappper-search {
+                justify-content: space-between;
+}
         }
     </style>
     <?php
