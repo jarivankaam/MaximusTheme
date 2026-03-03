@@ -103,9 +103,14 @@ add_shortcode('lichting_directory', function () {
                         <ul class="members">
                             <?php foreach ($members as $m): ?>
                                 <li>
-                                    <a href="<?php echo esc_url( um_user_profile_url($m->ID) ); ?>">
-                                        <?php echo esc_html($m->display_name); ?>
-                                    </a>
+                                    <div class="flex">
+                                         <img class="member-avatar" 
+         src="<?php echo esc_url($avatar_url); ?>" 
+         alt="<?php echo esc_attr($m->display_name); ?>" />
+                                        <a href="<?php echo esc_url( um_user_profile_url($m->ID) ); ?>">
+                                            <?php echo esc_html($m->display_name); ?>
+                                        </a>
+                                    </div>
                                 </li>
                             <?php endforeach; ?>
                         </ul>
@@ -128,10 +133,15 @@ add_shortcode('lichting_directory', function () {
                         </div>
                         <ul class="members">
                             <?php foreach ($members as $m): ?>
-                                <li>
-                                    <a href="<?php echo esc_url( um_user_profile_url($m->ID) ); ?>">
-                                        <?php echo esc_html($m->display_name); ?>
-                                    </a>
+                               <li>
+                                    <div class="flex">
+                                         <img class="member-avatar" 
+         src="<?php echo esc_url($avatar_url); ?>" 
+         alt="<?php echo esc_attr($m->display_name); ?>" />
+                                        <a href="<?php echo esc_url( um_user_profile_url($m->ID) ); ?>">
+                                            <?php echo esc_html($m->display_name); ?>
+                                        </a>
+                                    </div>
                                 </li>
                             <?php endforeach; ?>
                         </ul>
@@ -154,10 +164,15 @@ add_shortcode('lichting_directory', function () {
                         </div>
                         <ul class="members">
                             <?php foreach ($members as $m): ?>
-                                <li>
-                                    <a href="<?php echo esc_url( um_user_profile_url($m->ID) ); ?>">
-                                        <?php echo esc_html($m->display_name); ?>
-                                    </a>
+                              <li>
+                                    <div class="flex">
+                                         <img class="member-avatar" 
+         src="<?php echo esc_url($avatar_url); ?>" 
+         alt="<?php echo esc_attr($m->display_name); ?>" />
+                                        <a href="<?php echo esc_url( um_user_profile_url($m->ID) ); ?>">
+                                            <?php echo esc_html($m->display_name); ?>
+                                        </a>
+                                    </div>
                                 </li>
                             <?php endforeach; ?>
                         </ul>
