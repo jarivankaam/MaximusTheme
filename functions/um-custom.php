@@ -102,6 +102,7 @@ add_shortcode('lichting_directory', function () {
                         </div>
                         <ul class="members">
                             <?php foreach ($members as $m): ?>
+                                <?php $avatar_url = um_get_user_avatar_url($m->ID); ?>
                                 <li>
                                     <div class="flex">
                                          <img class="member-avatar" 
@@ -133,6 +134,7 @@ add_shortcode('lichting_directory', function () {
                         </div>
                         <ul class="members">
                             <?php foreach ($members as $m): ?>
+                                <?php $avatar_url = um_get_user_avatar_url($m->ID); ?>
                                <li>
                                     <div class="flex">
                                          <img class="member-avatar" 
@@ -164,6 +166,7 @@ add_shortcode('lichting_directory', function () {
                         </div>
                         <ul class="members">
                             <?php foreach ($members as $m): ?>
+                                <?php $avatar_url = um_get_user_avatar_url($m->ID); ?>
                               <li>
                                     <div class="flex">
                                          <img class="member-avatar" 
