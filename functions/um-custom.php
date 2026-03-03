@@ -204,6 +204,11 @@ add_shortcode('lichting_directory', function () {
             height: 50px;
             border-radius: 10px;
         }
+
+        .members li .flex {
+            align-items: center;
+            gap: 10px;
+        }
     </style>
     <?php
     return ob_get_clean();
