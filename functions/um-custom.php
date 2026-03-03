@@ -79,7 +79,7 @@ add_shortcode('lichting_directory', function () {
     ob_start();
     ?>
     <div class="member-directory">
-
+        <div class="flex justify-content-between">
         <form class="member-search" method="get">
             <input type="text" name="q" value="<?php echo esc_attr($q); ?>" placeholder="Zoek lid..." />
             <button type="submit">Zoeken</button>
@@ -87,6 +87,8 @@ add_shortcode('lichting_directory', function () {
                 <a class="clear" href="<?php echo esc_url(remove_query_arg('q')); ?>">Wissen</a>
             <?php endif; ?>
         </form>
+        <a href="#">Alle leden</a>
+        </div>
 
         <!-- LICHTING -->
         <h2 class="grid-heading">Lichtingen</h2>
