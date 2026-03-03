@@ -200,8 +200,8 @@ add_shortcode('lichting_directory', function () {
         .members li{margin:.25rem 0}
 
         .member-avatar {
-            width: 25px;
-            height: 25px;
+            width: 50px;
+            height: 50px;
             border-radius: 10px;
         }
     </style>
