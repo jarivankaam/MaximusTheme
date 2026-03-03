@@ -197,7 +197,7 @@ add_shortcode('lichting_directory', function () {
         .tile{border:1px solid #ddd;border-radius:12px;padding:1rem;background:#fff}
         .tile-title{font-weight:700;margin-bottom:.5rem;display:flex;gap:.5rem;align-items:baseline}
         .members{margin:0;padding-left:1.1rem}
-        .members li{margin:.25rem 0;list-style-type:none;}
+        .members li{margin:1rem 0;list-style-type:none;}
 
         .member-avatar {
             width: 50px;
