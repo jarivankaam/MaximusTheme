@@ -198,6 +198,12 @@ add_shortcode('lichting_directory', function () {
         .tile-title{font-weight:700;margin-bottom:.5rem;display:flex;gap:.5rem;align-items:baseline}
         .members{margin:0;padding-left:1.1rem}
         .members li{margin:.25rem 0}
+
+        .member-avatar {
+            width: 25px;
+            height: 25px;
+            border-radius: 10px;
+        }
     </style>
     <?php
     return ob_get_clean();
