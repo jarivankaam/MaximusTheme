@@ -7,15 +7,7 @@ require_once('functions/um-custom.php');
 require_once('functions/send_email_hook.php');
 
 
-// TEMPORARY — remove after checking
-add_action( 'init', function() {
-    if ( ! current_user_can( 'administrator' ) ) return;
-    $all_meta = get_user_meta( get_current_user_id() );
-    foreach ( $all_meta as $key => $value ) {
-        error_log( 'USER META: ' . $key . ' = ' . print_r( $value, true ) );
-    }
-    die();
-});
+
 // Register navigation menus.
 function register_my_menus() {
     register_nav_menus(
