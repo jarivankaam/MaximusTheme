@@ -14,7 +14,7 @@ $dod = get_sub_field('dod');
 
 $tileCount = count($tiles);
 if($dod) {
-    $col_count: 3;
+    $col_count = 3;
 } else {
     
     $col_count = $tileCount > 0 ? 12 / $tileCount : 12; // Prevent division by zero
