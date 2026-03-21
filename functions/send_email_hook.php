@@ -45,7 +45,7 @@ function notify_users_on_page_update($post_id)
     // Find all users who have the checkbox ticked (value stored as '1')
     $users = get_users(array(
         'meta_key' => $um_meta_key,
-        'meta_value' => 'Ja',
+        'meta_value' => '1',
         'fields' => array('ID', 'user_email', 'display_name'),
     ));
 
