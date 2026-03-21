@@ -33,9 +33,10 @@ $extra_col = $partners ? 1 : 0;
     }
 
     .dod {
-        width: 100%;
-        height: 100%;
-        max-width: 100%;
+        width: 100% !important;
+        height: 100% !important;
+        max-width: 100% !important;
+        max-height: 100% !important;
         display:flex;
         flex-direction: column;
     }
@@ -71,7 +72,7 @@ $extra_col = $partners ? 1 : 0;
 
                         <<?= $wrapper_tag ?> <?= $use_link ? 'href="' . esc_url($tile_url) . '"' : '' ?> class="tile-wrapper flex justify-content-center <?php if($partners && empty($tile['button'])) : ?> disabled <?php endif ?>">
                             <div class="content-wrapper border-radius-10 flex flex-column align-items-center justify-content-center">
-                                <div class="image-wrapper  <?php if($partners && !$tile['icon']) : ?> text-based <?php endif ?><?php if($current) : ?> current_db <?php endif ?><?php if($dod) : ?>dod<?php endif; ?>">
+                                <div class="image-wrapper  <?php if($partners && !$tile['icon']) : ?> text-based <?php endif ?><?php if($current) : ?> current_db <?php endif ?><?php if($dod) : ?>dod<?php endif; ?>?">
                                     <?php if($partners && !$tile['icon']) : ?>
                                     <h2><?= $tile['title'] ?></h2>
                                      <?php if ($dod): ?>
