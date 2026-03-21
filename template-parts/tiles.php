@@ -66,14 +66,14 @@ $extra_col = $partners ? 1 : 0;
                                 <div class="image-wrapper  <?php if($partners && !$tile['icon']) : ?> text-based <?php endif ?><?php if($current) : ?> current_db <?php endif ?>">
                                     <?php if($partners && !$tile['icon']) : ?>
                                     <h2><?= $tile['title'] ?></h2>
+                                     <?php if ($dod): ?>
+                                    <p><?= $tile['content'] ?></p>
+                                    <?php endif ?>
                                     <?php else : ?>
                                         <img src="<?= esc_url($tile['icon']) ?>" alt="icon">
                                     <?php endif ?>
                                 </div>
                                 <div class="maxtext flex flex-column align-items-center justify-content-center">
-                                    <?php if($dod): ?>
-                                    <p><?= $tile['content'] ?></p>
-                                    <?php endif ?>
                                   <?php if($current) : ?>
                                     <p class="bold"><?= esc_html($tile['title']) ?></p>
                                     <?php endif ?>
