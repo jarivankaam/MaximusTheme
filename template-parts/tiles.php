@@ -10,6 +10,7 @@ $partners = get_sub_field('partners');
 $current = get_sub_field("current");
 $db = get_field("current_db", "options");
 $no_gap = get_sub_field('no_gap');
+$dod = get_sub_field('dod');
 
 $tileCount = count($tiles);
 $col_count = $tileCount > 0 ? 12 / $tileCount : 12; // Prevent division by zero
@@ -70,6 +71,9 @@ $extra_col = $partners ? 1 : 0;
                                     <?php endif ?>
                                 </div>
                                 <div class="maxtext flex flex-column align-items-center justify-content-center">
+                                    <?php if($dod) ?>
+                                    <p><?= $tile['content'] ?></p>
+                                    <?php endif ?>
                                   <?php if($current) : ?>
                                     <p class="bold"><?= esc_html($tile['title']) ?></p>
                                     <?php endif ?>
