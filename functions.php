@@ -6,7 +6,12 @@ require_once('functions/get_birthdays.php');
 require_once('functions/um-custom.php');
 require_once('functions/send_email_hook.php');
 
-
+add_action('init', function () {
+    if (current_user_can('administrator')) {
+        delete_transient('page_notify_lock_408');
+        error_log('Transient cleared.');
+    }
+});
 
 // Register navigation menus.
 function register_my_menus() {
