@@ -71,7 +71,7 @@ $extra_col = $partners ? 1 : 0;
                                     <?php endif ?>
                                 </div>
                                 <div class="maxtext flex flex-column align-items-center justify-content-center">
-                                    <?php if($dod) ?>
+                                    <?php if($dod): ?>
                                     <p><?= $tile['content'] ?></p>
                                     <?php endif ?>
                                   <?php if($current) : ?>
