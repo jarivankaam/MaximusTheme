@@ -13,7 +13,12 @@ $no_gap = get_sub_field('no_gap');
 $dod = get_sub_field('dod');
 
 $tileCount = count($tiles);
-$col_count = $tileCount > 0 ? 12 / $tileCount : 12; // Prevent division by zero
+if($dod) {
+    $col_count: 3;
+} else {
+    
+    $col_count = $tileCount > 0 ? 12 / $tileCount : 12; // Prevent division by zero
+}
 $extra_col = $partners ? 1 : 0;
 ?>
 
