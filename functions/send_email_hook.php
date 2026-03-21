@@ -12,7 +12,7 @@ function notify_users_on_page_update( $post_id ) {
     // CONFIG — update these three values
     // -------------------------------------------------------
     $target_page_id = 408;                        // Your page ID
-    $um_meta_key    = 'recieve_mail';    // Your UM field key
+    $um_meta_key    = 'notify';    // Your UM field key
     $from_email     = 'abactis@svmaximus.nl';    // Your sending address
     $from_name      = 'sv-maximus.nl';          // Your sender name
     // -------------------------------------------------------
