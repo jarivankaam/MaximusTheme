@@ -4,7 +4,6 @@ require_once('functions/get_button.php');
 require_once('functions/get_acf_options.php');
 require_once('functions/get_birthdays.php');
 require_once('functions/um-custom.php');
-require_once('functions/send_email_hook.php');
 
 
 
