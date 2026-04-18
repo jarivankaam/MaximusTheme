@@ -41,12 +41,6 @@ $total_images      = is_array($images) ? count($images) : 0;
                     <?php endforeach; ?>
                 </div>
             </div>
-
-            <?php if ( $display_mode === 'preview' && $total_images > 3 && $type_of_page ) : ?>
-                <button class="read-more-btn">
-                    <?= esc_html( $read_more_label ) ?>
-                </button>
-            <?php endif; ?>
             <?php if(!$type_of_page && $album) : ?>
                 <div class="cta-wrapper flex align-items-center justify-content-center">
                     <a href="<?= $album ?>" class="cta cta-secondary">Naar Album</a>
@@ -59,53 +53,3 @@ $total_images      = is_array($images) ? count($images) : 0;
 
     </div>
 </section>
-<script>
-    document.addEventListener('DOMContentLoaded', function(){
-        document.querySelectorAll('.section-gallery.mode-preview').forEach(function(section){
-            const gallery   = section.querySelector('.gallery-images');
-            const items     = gallery.querySelectorAll('.gallery-item');
-            const btn       = section.querySelector('.read-more-btn');
-            const previewN  = 1;
-            let isExpanded  = false;
-            let previewMaxH = 0;
-
-            function calcPreviewHeight(){
-                let h = 0;
-                const gap = 0; // Bootstrap gebruikt padding, dus we negeren gap hier
-                items.forEach((item,i) => {
-                    const ih = item.getBoundingClientRect().height;
-                    if (i < previewN) {
-                        h += ih + gap;
-                    } else if (i === previewN) {
-                        h += ih * 0.3; // 30% van de 4e
-                    }
-                });
-                return h;
-            }
-
-            function collapse(){
-                previewMaxH = calcPreviewHeight();
-                gallery.style.maxHeight = previewMaxH + 'px';
-                section.classList.add('collapsed');
-                btn.textContent = '<?= esc_js( $read_more_label ); ?>';
-            }
-
-            function expand(){
-                gallery.style.maxHeight = gallery.scrollHeight + 'px';
-                section.classList.remove('collapsed');
-                btn.textContent = '<?= esc_js( $show_less_label ); ?>';
-            }
-
-            if ( items.length > previewN ){
-                // initialiseren
-                window.addEventListener('load', collapse);
-                window.addEventListener('resize', collapse);
-
-                btn.addEventListener('click', function(){
-                    isExpanded ? collapse() : expand();
-                    isExpanded = !isExpanded;
-                });
-            }
-        });
-    });
-</script>
